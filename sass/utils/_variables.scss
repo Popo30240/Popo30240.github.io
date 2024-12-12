@@ -1,10 +1,8 @@
 /* on déclare des variables de couleur*/
-:root {
-  --primaryColor: #9356DC;
-  --secondaryColor: #FF79DA;
-  --tertiaryColor: #99E2D0;
-  --grey: #F2F2F2;
-  --filter-bg-color: #DEEBFF;
-  --white:white;
-  --black:black;
-}
+$primaryColor: #9356DC;
+$secondaryColor: #FF79DA;
+$tertiaryColor: #99E2D0;
+$grey: #F2F2F2;
+$filter-bg-color: #DEEBFF;
+$white:white;
+$black:black;
