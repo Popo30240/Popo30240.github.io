@@ -1,26 +1,15 @@
 @charset "UTF-8";
+/* on déclare des variables de couleur*/
+/* on déclare des variables pour la tailel de la police*/
 * {
   margin: 0px;
   padding: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
-/* on déclare des variables de couleur*/
-.navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.navbar .navbar__tittle {
-  font-style: italic;
-  font-family: "Shrikhand", sans-serif;
-}
-.navbar .location {
-  display: flex;
-  flex-direction: row;
-}
-.navbar .location input {
-  border-style: none;
-  padding-left: 5px;
+main h1, h2 {
+  font-size: 24px;
 }
 
 /*
@@ -31,7 +20,7 @@
     width: 100%;
     height: 100%;
     z-index: 999;
-    background-color: #fff;
+    background-color: $white-color;
 }
 
 .loader {
@@ -39,7 +28,7 @@
     height: 120px;
     border: 16px solid #e5e5e5;
     border-radius: 50%;
-    border-top: 16px solid #FF79DA;
+    border-top: 16px solid $secondary-color;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -61,5 +50,63 @@
     visibility: hidden;
 }
 */
+.navbar {
+  display: flex;
+  flex-direction: column;
+}
+.navbar__location {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  background-color: #e8e8e8;
+  box-shadow: 0px 3px 3px #ccc, inset 0px 2px 2px #ccc;
+  padding: 10px 0 10px 0;
+}
+.navbar__location i {
+  padding: 0 10px 0 10px;
+}
+.navbar__location input {
+  border-style: none;
+  font-weight: 500;
+  font-style: normal;
+  background-color: #e8e8e8;
+}
+.navbar__location input::placeholder {
+  color: black;
+}
+
+.cta {
+  display: inline-block;
+  background: linear-gradient(#FF79DA, #9356DC);
+  text-decoration: none;
+  color: white;
+  border-radius: 50px;
+  padding: 20px;
+  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+.cta:hover {
+  opacity: 0.7;
+}
+
+.navbar__title p {
+  font-family: "Shrikhand", serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  padding: 5px 0 5px 0;
+}
+
+.section__restaurantSelection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #F2F2F2;
+  padding: 30px 0 60px 0px;
+}
+.section__restaurantSelection p {
+  padding: 10px 10px 30px 10px;
+}
 
 /*# sourceMappingURL=main.css.map */
