@@ -19,3 +19,34 @@
 
 }
 
+.section__functioning {
+    background-color: $white-color;
+    padding: 30px 0px 30px 0px;
+}
+
+
+.functioning__link {
+    display: flex;
+    justify-content: center;
+    padding:20px 0px 20px 0px;
+    & li::marker {
+        color:red;
+        background-color: $primary-color;
+    }
+}
+
+.section__cardsRestaurants {
+    // display: grid;
+    // grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    // gap:2em;
+    // box-sizing: border-box;
+    background-color: $grey-light-color;
+    padding: 50px 0 70px 0;
+}
+
+.cardsRestaurants__cards {
+    display: grid;
+    gap: 2em;
+    justify-items: center;
+    padding-top: 20px;
+}
