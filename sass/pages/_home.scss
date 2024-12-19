@@ -29,9 +29,25 @@
     display: flex;
     justify-content: center;
     padding:20px 0px 20px 0px;
+    & ol {
+        list-style: none;
+    }
     & li::marker {
         color:red;
-        background-color: $primary-color;
+    }
+}
+
+.circleNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    background-color: $primary-color;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    & p {
+        color:white;
     }
 }
 

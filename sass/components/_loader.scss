@@ -12,7 +12,7 @@
 .loader {
     width: 120px;
     height: 120px;
-    border: 16px solid #e5e5e5;
+    border: 16px solid $grey-medium-color;
     border-radius: 50%;
     border-top: 16px solid $secondary-color;
     position: absolute;
@@ -22,7 +22,7 @@
     animation: loader 1s linear infinite;
 }
 
-@keyframes loader{
+@keyframes loader {
     0%{
        transform: translate(-50%, -50%) rotate(0deg);
     }

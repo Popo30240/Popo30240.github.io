@@ -35,9 +35,9 @@
     &:hover{
         opacity: 0.7;
     }
-  }
+}
 
-  .cta2 {
+.backgroundRectangle {
     // display: inline-block;
  
     border-radius: 15px 15px;
@@ -62,7 +62,7 @@
             color:$primary-color;
         }
     }
-  }
+}
 
 .card {
     background-color: $white-color;
@@ -84,11 +84,9 @@
         display: none;
     }
     &__icone input[type=checkbox]:checked + label svg {
-        // fill: linear-gradient($secondary-color, $primary-color);
-        // stroke: linear-gradient($secondary-color, $primary-color);
-        fill: $secondary-color;
-        stroke: $secondary-color;
-    }
+        fill: url(#gradient-horizontal);
+        stroke: url(#gradient-horizontal);
+    }   
     & a {
         color: inherit;
         text-decoration:none;
