@@ -206,15 +206,13 @@ h2 {
 .functioning__link ol {
   list-style: none;
 }
-.functioning__link li::marker {
-  color: red;
-}
 
 .circleNumber {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
+  left: -5%;
   background-color: #9356DC;
   width: 24px;
   height: 24px;
