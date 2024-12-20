@@ -116,6 +116,22 @@ h2 {
   height: 251px;
   width: 340px;
   border-radius: 15px;
+  position: relative;
+}
+.card__contenairNew {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 29px;
+  background-color: #99E2D0;
+  border-radius: 3px 3px 3px 3px;
+  position: absolute;
+  top: 10px;
+  left: 250px;
+}
+.card__contenairNew p {
+  opacity: 50%;
 }
 .card__icone {
   display: inline-block;

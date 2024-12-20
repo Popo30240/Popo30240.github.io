@@ -69,6 +69,22 @@
     height: 251px;
     width: 340px;
     border-radius: 15px;
+    position:relative;
+    &__contenairNew {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 29px;
+        background-color: $tertiary-color;
+        border-radius: 3px 3px 3px 3px;
+        position: absolute;
+        top:10px;
+        left:250px;
+        & p {
+            opacity: 50%;
+        }
+    }
     &__icone {
         display: inline-block;
         cursor: pointer;
