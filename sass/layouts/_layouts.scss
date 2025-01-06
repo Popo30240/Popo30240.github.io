@@ -24,6 +24,15 @@
     }
 }
 
+.navbarMenu {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    & i {
+        color: black;
+    }
+}
+
 .cta1 {
     // display: inline-block;
     text-decoration:none;
@@ -45,8 +54,11 @@
     margin: 20px;
     filter: drop-shadow(1px 5px 7px rgba(0, 0, 0, 0.2));
 
-    &--backgroundColor {
+    &--backgroundColorGreyLight {
         background: $grey-light-color;
+    }
+    &--backgroundColorWhite {
+        background: $white-color;
     }
     & i {
         color:#898989;

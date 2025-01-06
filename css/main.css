@@ -10,6 +10,18 @@ main h1, h2 {
   font-size: 24px;
 }
 
+.menuTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-around;
+}
+.menuTitle h1 {
+  font-family: Shrikhand;
+  font-size: 28px;
+  font-weight: 400;
+}
+
 h2 {
   padding-left: 10px;
 }
@@ -61,7 +73,6 @@ h2 {
 /* Contenu principal */
 #content {
   display: none; /* Masqué par défaut */
-  padding: 20px;
 }
 
 /* Rendre le contenu visible après le loader */
@@ -95,6 +106,15 @@ body.loaded #content {
   color: black;
 }
 
+.navbarMenu {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+.navbarMenu i {
+  color: black;
+}
+
 .cta1 {
   text-decoration: none;
   color: white;
@@ -113,8 +133,11 @@ body.loaded #content {
   margin: 20px;
   filter: drop-shadow(1px 5px 7px rgba(0, 0, 0, 0.2));
 }
-.backgroundRectangle--backgroundColor {
+.backgroundRectangle--backgroundColorGreyLight {
   background: #F2F2F2;
+}
+.backgroundRectangle--backgroundColorWhite {
+  background: white;
 }
 .backgroundRectangle i {
   color: #898989;
@@ -266,6 +289,37 @@ body.loaded #content {
   gap: 2em;
   justify-items: center;
   padding-top: 20px;
+}
+
+.headernavbarMenu img {
+  height: 257px;
+  width: 100%;
+}
+
+.menu {
+  background-color: #F2F2F2;
+  padding: 10px;
+}
+.menu h2 {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 300;
+}
+.menu span {
+  font-weight: bold;
+}
+
+.line {
+  border: none; /* Supprime les bordures par défaut */
+  height: 3px; /* Épaisseur de la ligne */
+  width: 40px; /* Largeur de la ligne*/
+  background-color: #99E2D0; /* Couleur de la ligne */
+  margin: 20px 0; /* Marges autour de la ligne */
+}
+
+.orderButton {
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=main.css.map */

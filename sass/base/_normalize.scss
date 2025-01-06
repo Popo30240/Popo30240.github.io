@@ -9,6 +9,19 @@ main h1, h2 {
     font-size: $seize-police-title;
 }
 
+.menuTitle { 
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+
+    & h1 {
+        font-family: Shrikhand;
+        font-size: 28px;
+        font-weight: 400;
+    }
+}
+
 h2 {
     padding-left: 10px;
 }
