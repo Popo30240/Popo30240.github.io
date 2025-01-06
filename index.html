@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="./css/main.css">
     </head>
 
-    <body>
+    <body class="loaded">
 
         <svg aria-hidden="true" focusable="false" style="width:0;height:0;position:absolute;">
             <linearGradient id="gradient-horizontal" x1="0" x2="0" y1="0" y2="1">
@@ -32,9 +32,13 @@
             </linearGradient>
         </svg>
 
-        <div class="loaderContainer">
+        <!-- Loader -->
+        <div id="loader">
+            <div class="spinner"></div>
+        </div>
 
-            <div class="loader"></div>
+        <!-- Contenu de la page -->
+        <div id="content">
 
             <header>
 
@@ -226,10 +230,9 @@
                     </li>
                 </ul>
 
-            </footer>  
-                
-        </div>   
+            </footer> 
 
+        </div>   
     </body>
 
 </html>
