@@ -1,18 +1,40 @@
-.headernavbarMenu img {
-    height: 257px;
-    width: 100%;
+.backgroundMenu {
+    background-color: $grey-light-color;
+}
+.headernavbarMenu {
+    & img {
+        height: 257px;
+        width: 100%;
+    }
+    & div:nth-child(2) {
+        margin: 0 auto;
+    }
 }
 
 .menu {
     background-color: $grey-light-color;
-    padding: 10px;
+    border-radius: 25px 25px 0 0;
+    position: relative;
+    top: -40px;
     & h2 {
         font-family: Roboto;
         font-size: 16px;
         font-weight: 300;
     }
+    & li {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    & h3 {
+        font-size: 18px;
+    }
+    & p {
+        font-size: 15px;
+    }
     & span {
-        font-weight: bold;
+        font-size: 15px;
+        font-weight: 700;
     }
 }
 
@@ -21,7 +43,7 @@
     height: 3px; /* Épaisseur de la ligne */
     width: 40px; /* Largeur de la ligne*/
     background-color: $tertiary-color; /* Couleur de la ligne */
-    margin: 20px 0; /* Marges autour de la ligne */
+    margin: 20px 10px; /* Marges autour de la ligne */
 }
 
 .orderButton {

@@ -83,6 +83,7 @@ body.loaded #content {
 .navbar {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .navbar__location {
   display: flex;
@@ -109,18 +110,22 @@ body.loaded #content {
 .navbarMenu {
   display: flex;
   align-items: baseline;
-  justify-content: center;
+  justify-content: space-between;
 }
 .navbarMenu i {
   color: black;
 }
 
 .cta1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 186px;
+  height: 50px;
   text-decoration: none;
   color: white;
   background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 50px;
-  padding: 20px;
   filter: drop-shadow(1px 5px 7px rgba(0, 0, 0, 0.2));
 }
 .cta1:hover {
@@ -128,8 +133,12 @@ body.loaded #content {
 }
 
 .backgroundRectangle {
+  display: flex;
+  align-items: center;
   border-radius: 15px 15px;
-  padding: 30px;
+  width: 335px;
+  height: 72.38px;
+  padding: 0 10px 0 10px;
   margin: 20px;
   filter: drop-shadow(1px 5px 7px rgba(0, 0, 0, 0.2));
 }
@@ -234,8 +243,6 @@ body.loaded #content {
   font-family: "Shrikhand", serif;
   font-weight: 400;
   font-size: 24px;
-  text-align: center;
-  padding: 5px 0 5px 0;
 }
 
 .section__restaurantSelection {
@@ -291,22 +298,43 @@ body.loaded #content {
   padding-top: 20px;
 }
 
+.backgroundMenu {
+  background-color: #F2F2F2;
+}
+
 .headernavbarMenu img {
   height: 257px;
   width: 100%;
 }
+.headernavbarMenu div:nth-child(2) {
+  margin: 0 auto;
+}
 
 .menu {
   background-color: #F2F2F2;
-  padding: 10px;
+  border-radius: 25px 25px 0 0;
+  position: relative;
+  top: -40px;
 }
 .menu h2 {
   font-family: Roboto;
   font-size: 16px;
   font-weight: 300;
 }
+.menu li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu h3 {
+  font-size: 18px;
+}
+.menu p {
+  font-size: 15px;
+}
 .menu span {
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .line {
@@ -314,7 +342,7 @@ body.loaded #content {
   height: 3px; /* Épaisseur de la ligne */
   width: 40px; /* Largeur de la ligne*/
   background-color: #99E2D0; /* Couleur de la ligne */
-  margin: 20px 0; /* Marges autour de la ligne */
+  margin: 20px 10px; /* Marges autour de la ligne */
 }
 
 .orderButton {
