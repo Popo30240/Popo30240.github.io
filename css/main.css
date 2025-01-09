@@ -80,6 +80,45 @@ body.loaded #content {
   display: block;
 }
 
+/* 1. Animation pour faire "remonter" le rectangle (remplissage) */
+@keyframes fillFromBottom {
+  0% {
+    transform: translateY(120px); /* Part en bas (hors du cœur) */
+  }
+  100% {
+    transform: translateY(0); /* Remonte complètement */
+  }
+}
+/* 2. On masque la checkbox qui sert de déclencheur */
+input[type=checkbox] {
+  display: none;
+}
+
+/* 3. Conteneur pour centrer ou styler l'exemple (optionnel) */
+.containerHeart {
+  cursor: pointer; /* pour signaler qu’on peut cliquer */
+}
+
+/* 4. Par défaut, le rectangle est placé en bas (hors du coeur).
+        On utilise un transform direct pour l'état "non coché". */
+.fillRect {
+  transform: translateY(120px); /* en bas, hors du cœur */
+  transition: transform 0.2s ease; /* Petit transition si décochage */
+}
+
+/* 5. Quand la checkbox est cochée, on lance l’animation 
+        de remplissage (3s). Le "forwards" garde l’état final. */
+input[type=checkbox]:checked + label svg .fillRect {
+  animation: fillFromBottom 3s forwards ease;
+}
+
+/* On dessine un contour du coeur pour visualiser la forme (optionnel) */
+.heartOutline {
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+}
+
 .navbar {
   display: flex;
   flex-direction: column;
@@ -136,10 +175,10 @@ body.loaded #content {
   display: flex;
   align-items: center;
   border-radius: 15px 15px;
-  width: 335px;
-  height: 72.38px;
+  width: 349px;
+  height: 69px;
   padding: 0 10px 0 10px;
-  margin: 20px;
+  margin: 15px;
   filter: drop-shadow(1px 5px 7px rgba(0, 0, 0, 0.2));
 }
 .backgroundRectangle--backgroundColorGreyLight {
@@ -157,8 +196,11 @@ body.loaded #content {
   padding-left: 10px;
   font-weight: 500;
 }
-.backgroundRectangle:hover i {
+.backgroundRectangle--hoverPrimary-color:hover i {
   color: #9356DC;
+}
+.backgroundRectangle--hoverTertiary-color:hover i {
+  color: #99E2D0;
 }
 
 .card {
@@ -183,23 +225,9 @@ body.loaded #content {
 .card__contenairNew p {
   opacity: 50%;
 }
-.card__icone {
-  display: inline-block;
-  cursor: pointer;
-}
 .card__icone svg {
   width: 24px;
   height: 24px;
-  fill: transparent;
-  stroke: #000;
-  transition: fill 0.3s, stroke 0.3s;
-}
-.card__icone input[type=checkbox] {
-  display: none;
-}
-.card__icone input[type=checkbox]:checked + label svg {
-  fill: url(#gradient-horizontal);
-  stroke: url(#gradient-horizontal);
 }
 .card a {
   color: inherit;
@@ -265,7 +293,6 @@ body.loaded #content {
 .functioning__link {
   display: flex;
   justify-content: center;
-  padding: 20px 0px 20px 0px;
 }
 .functioning__link ol {
   list-style: none;
@@ -306,17 +333,24 @@ body.loaded #content {
   height: 257px;
   width: 100%;
 }
+.headernavbarMenu div:nth-child(1) {
+  margin-left: 10px;
+}
 .headernavbarMenu div:nth-child(2) {
   margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .menu {
   background-color: #F2F2F2;
   border-radius: 25px 25px 0 0;
+  padding-top: 30px;
   position: relative;
   top: -40px;
 }
 .menu h2 {
+  padding-top: 30px;
   font-family: Roboto;
   font-size: 16px;
   font-weight: 300;
@@ -336,18 +370,22 @@ body.loaded #content {
   font-size: 15px;
   font-weight: 700;
 }
+.menu__checkAnimation {
+  display: none;
+}
 
 .line {
   border: none; /* Supprime les bordures par défaut */
   height: 3px; /* Épaisseur de la ligne */
   width: 40px; /* Largeur de la ligne*/
   background-color: #99E2D0; /* Couleur de la ligne */
-  margin: 20px 10px; /* Marges autour de la ligne */
+  margin: 5px 10px; /* Marges autour de la ligne */
 }
 
 .orderButton {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

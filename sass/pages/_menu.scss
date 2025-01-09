@@ -6,17 +6,24 @@
         height: 257px;
         width: 100%;
     }
+    & div:nth-child(1) {
+        margin-left: 10px;
+    }
     & div:nth-child(2) {
         margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
 
 .menu {
     background-color: $grey-light-color;
     border-radius: 25px 25px 0 0;
+    padding-top: 30px;
     position: relative;
     top: -40px;
     & h2 {
+        padding-top: 30px;
         font-family: Roboto;
         font-size: 16px;
         font-weight: 300;
@@ -36,6 +43,9 @@
         font-size: 15px;
         font-weight: 700;
     }
+    &__checkAnimation {
+        display:none;
+    }
 }
 
 .line {
@@ -43,11 +53,12 @@
     height: 3px; /* Épaisseur de la ligne */
     width: 40px; /* Largeur de la ligne*/
     background-color: $tertiary-color; /* Couleur de la ligne */
-    margin: 20px 10px; /* Marges autour de la ligne */
+    margin: 5px 10px; /* Marges autour de la ligne */
 }
 
 .orderButton {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 

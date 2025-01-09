@@ -1,0 +1,41 @@
+
+/* 1. Animation pour faire "remonter" le rectangle (remplissage) */
+@keyframes fillFromBottom {
+    0% {
+    transform: translateY(120px); /* Part en bas (hors du cœur) */
+    }
+    100% {
+    transform: translateY(0);     /* Remonte complètement */
+    }
+}
+
+/* 2. On masque la checkbox qui sert de déclencheur */
+input[type=checkbox] {
+    display: none;
+}
+
+/* 3. Conteneur pour centrer ou styler l'exemple (optionnel) */
+.containerHeart {
+    cursor: pointer; /* pour signaler qu’on peut cliquer */
+}
+
+/* 4. Par défaut, le rectangle est placé en bas (hors du coeur).
+        On utilise un transform direct pour l'état "non coché". */
+.fillRect {
+    transform: translateY(120px); /* en bas, hors du cœur */
+    transition: transform 0.2s ease; /* Petit transition si décochage */
+}
+
+/* 5. Quand la checkbox est cochée, on lance l’animation 
+        de remplissage (3s). Le "forwards" garde l’état final. */
+    input[type=checkbox]:checked + label svg .fillRect {
+    animation: fillFromBottom 3s forwards ease;
+}
+
+/* On dessine un contour du coeur pour visualiser la forme (optionnel) */
+.heartOutline {
+    fill: none;
+    stroke: black;
+    stroke-width: 1;
+}
+
