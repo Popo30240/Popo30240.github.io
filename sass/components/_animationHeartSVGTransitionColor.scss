@@ -1,41 +1,70 @@
+/********** method 1 **********/
 
-/* 1. Animation pour faire "remonter" le rectangle (remplissage) */
-@keyframes fillFromBottom {
-    0% {
-    transform: translateY(120px); /* Part en bas (hors du cœur) */
-    }
-    100% {
-    transform: translateY(0);     /* Remonte complètement */
-    }
-}
+/* 1. On masque la checkbox qui sert de déclencheur */
 
-/* 2. On masque la checkbox qui sert de déclencheur */
-input[type=checkbox] {
-    display: none;
-}
-
-/* 3. Conteneur pour centrer ou styler l'exemple (optionnel) */
+/* 2. Conteneur pour centrer ou styler l'exemple (optionnel) */
 .containerHeart {
     cursor: pointer; /* pour signaler qu’on peut cliquer */
+    &__fillRect {
+        /* 3. Par défaut, le cœur est réduit de façon à ne pas le voir.
+        On utilise un transform direct pour l'état "non coché". */
+        transform: scale(0.1);
+        transition: transform 4000ms;
+    }
+    &__heartOutline {
+        /* On dessine un contour du coeur pour visualiser la forme (optionnel) */
+        fill: none;
+        stroke: black;
+        stroke-width: 1;
+    }
+
 }
+
+input[type=checkbox]:checked + label svg .containerHeart__fillRect {
+    /* 4. Quand la checkbox est cochée, on lance l’animation du cœur qui grossit jusqu'à prendre sa taille initial.
+    Donnant un effet de remplissage en (4s).*/
+    transform: scale(1)
+}
+
+/********** method 2 **********/
+
+/* 1. Animation pour faire "remonter" le rectangle (remplissage) */
+
+// @keyframes fillFromBottom {
+//     0% {
+//     transform: translateY(50px); /* Part en bas (hors du cœur) */
+//     }
+//     100% {
+//     transform: translateY(0);     /* Remonte complètement */
+//     }
+// }
+
+/* 2. On masque la checkbox qui sert de déclencheur */
+
+/* 3. Conteneur pour centrer ou styler l'exemple (optionnel) */
+
+// .containerHeart {
+//     cursor: pointer; /* pour signaler qu’on peut cliquer */
+// }
 
 /* 4. Par défaut, le rectangle est placé en bas (hors du coeur).
         On utilise un transform direct pour l'état "non coché". */
-.fillRect {
-    transform: translateY(120px); /* en bas, hors du cœur */
-    transition: transform 0.2s ease; /* Petit transition si décochage */
-}
+// .fillRect {
+//     transform: translateY(0px); /* en bas, hors du cœur */
+//     transition: transform 0.2s ease; /* Petit transition si décochage */
+// }
 
 /* 5. Quand la checkbox est cochée, on lance l’animation 
         de remplissage (3s). Le "forwards" garde l’état final. */
-    input[type=checkbox]:checked + label svg .fillRect {
-    animation: fillFromBottom 3s forwards ease;
-}
+//     input[type=checkbox]:checked + label svg .fillRect {
+//     animation: fillFromBottom 4s forwards ease;
+// }
 
 /* On dessine un contour du coeur pour visualiser la forme (optionnel) */
-.heartOutline {
-    fill: none;
-    stroke: black;
-    stroke-width: 1;
-}
+// .heartOutline {
+//     fill: none;
+//     stroke: black;
+//     stroke-width: 1;
+// }
+
 

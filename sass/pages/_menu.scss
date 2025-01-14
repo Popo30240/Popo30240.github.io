@@ -43,11 +43,36 @@
         font-size: 15px;
         font-weight: 700;
     }
-    &__checkAnimation {
+}
+/*
+.backgroundRectangle--backgroundColorWhite {
+    & div:nth-child(3) {
         display:none;
     }
-}
+    &:active {
+        display:flex;
+        justify-content: center;
+        align-items: center;
 
+        //position: relative;
+        //left: 10px;
+
+        height: 20px;
+        width: 69px;
+
+        border-radius: 0 15px 15px 0;
+
+        background-color: $tertiary-color;
+
+        & i {
+            font-size: 25px;
+            color:$tertiary-color;
+            border-radius:50%;
+            background-color: white;
+        }
+    }
+}
+*/
 .line {
     border: none; /* Supprime les bordures par défaut */
     height: 3px; /* Épaisseur de la ligne */

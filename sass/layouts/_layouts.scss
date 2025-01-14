@@ -63,6 +63,8 @@
     margin: 15px;
     filter: drop-shadow(1px 5px 7px rgba(0, 0, 0, 0.2));
 
+    transition: width 0.6s ease;
+
     &--backgroundColorGreyLight {
         background: $grey-light-color;
     }
@@ -85,8 +87,9 @@
             }
         }
     }
-    &--hoverTertiary-color {
+    &__animation {
         &:hover {
+            width: 70%;
             & i {
                 color:$tertiary-color;
             }
@@ -118,6 +121,7 @@
     &__icone svg {
         width: 24px;
         height: 24px;
+        border-radius: 50%;
     }
     & a {
         color: inherit;

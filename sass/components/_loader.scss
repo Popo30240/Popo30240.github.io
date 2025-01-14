@@ -31,7 +31,7 @@
     border: 10px solid rgba(0, 0, 0, 0.2);
     border-top: 10px solid $secondary-color;
     border-radius: 50%;
-    animation: spin 1s linear infinite;
+    animation: spin 1.5s cubic-bezier(0.2, 0.64, 1, 0.35) infinite;
 }
 
 /* Animation du spinner */
