@@ -47,6 +47,48 @@
     }
 }
 
+.menu__Enter ol {
+    /* Animation d'apparition */
+    @keyframes fadeInEnter {
+        0% {
+            opacity: 0;
+            pointer-events: none;
+        }
+        100% {
+            opacity: 1;  
+        }
+    }
+    animation: fadeInEnter 15s ease forwards;
+}
+
+.menu__Dishes ol {
+    /* Animation d'apparition */
+    @keyframes fadeInDishes {
+        0% {
+            opacity: 0;
+            pointer-events: none;
+        }
+        100% {
+            opacity: 1;  
+        }
+    }
+    animation: fadeInDishes 30s ease forwards;
+}
+
+.menu__Desserts ol {
+    /* Animation d'apparition */
+    @keyframes fadeInDesserts {
+        0% {
+            opacity: 0;
+            pointer-events: none;
+        }
+        100% {
+            opacity: 1;  
+        }
+    }
+    animation: fadeInDesserts 45s ease forwards;
+}
+
 .backgroundRectangle--backgroundColorWhite {
 
     width: 349px;
@@ -60,12 +102,11 @@
             display:none;
         }
     } 
-
     /* Si l'élément est survolé alors il est dans le flux du DOM */
     &:hover {
         @keyframes checkAnimationFromRight {
              0% {
-             transform: translateX(50px); /* Part à droite*/
+             transform: translateX(40px); /* Part à droite*/
              }
              100% {
              transform: translateX(0);     /* Remonte complètement */

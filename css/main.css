@@ -369,6 +369,48 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   margin-left: auto;
 }
 
+.menu__Enter ol {
+  /* Animation d'apparition */
+  animation: fadeInEnter 15s ease forwards;
+}
+@keyframes fadeInEnter {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.menu__Dishes ol {
+  /* Animation d'apparition */
+  animation: fadeInDishes 30s ease forwards;
+}
+@keyframes fadeInDishes {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.menu__Desserts ol {
+  /* Animation d'apparition */
+  animation: fadeInDesserts 45s ease forwards;
+}
+@keyframes fadeInDesserts {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .backgroundRectangle--backgroundColorWhite {
   width: 349px;
   height: 69px;
@@ -384,7 +426,7 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
 }
 @keyframes checkAnimationFromRight {
   0% {
-    transform: translateX(50px); /* Part à droite*/
+    transform: translateX(40px); /* Part à droite*/
   }
   100% {
     transform: translateX(0); /* Remonte complètement */
