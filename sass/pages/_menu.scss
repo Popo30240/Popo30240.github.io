@@ -28,51 +28,90 @@
         font-size: 16px;
         font-weight: 300;
     }
-    & li {
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-    }
     & h3 {
         font-size: 18px;
     }
     & p {
         font-size: 15px;
     }
-    & span {
-        font-size: 15px;
+    &__description {
+        padding-left: 10px;
+    }
+    &__price {
         font-weight: 700;
+
+        padding: 20px 10px 0 0;
+
+        margin-left: auto;
+
     }
 }
-/*
+
 .backgroundRectangle--backgroundColorWhite {
-    & div:nth-child(3) {
-        display:none;
-    }
-    &:active {
-        display:flex;
-        justify-content: center;
-        align-items: center;
 
-        //position: relative;
-        //left: 10px;
+    width: 349px;
+    height: 69px;
 
-        height: 20px;
-        width: 69px;
+    padding: 0;
 
-        border-radius: 0 15px 15px 0;
-
-        background-color: $tertiary-color;
-
-        & i {
-            font-size: 25px;
-            color:$tertiary-color;
-            border-radius:50%;
-            background-color: white;
+    /* Si l'élément n'est pas survolé alors il n'est plus dans le flux DOM */
+    &:not(:hover) {
+        .menu__checkAnimation {
+            display:none;
         }
+    } 
+
+    /* Si l'élément est survolé alors il est dans le flux du DOM */
+    &:hover {
+        @keyframes checkAnimationFromRight {
+             0% {
+             transform: translateX(50px); /* Part à droite*/
+             }
+             100% {
+             transform: translateX(0);     /* Remonte complètement */
+             }
+        }
+        .menu__checkAnimation {
+            display:block;
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            height: 69px;
+            width: 59px;
+
+            border-radius: 0 15px 15px 0;
+    
+            background-color: $tertiary-color;
+
+            animation: checkAnimationFromRight 4s forwards ease;
+    
+            & i {
+                display:flex;
+                font-size: 25px;
+                color:$tertiary-color;
+                border-radius:50%;
+                background-color: white;
+            }
+
+        }
+        .menu__description h3 {
+            width: 220px;
+            white-space: nowrap;            /* empêche le retour à la ligne */
+            overflow: hidden;               /* masque le texte qui déborde */
+            text-overflow: ellipsis;        /* tronque le texte avec "..." */
+        }
+        .menu__description p {
+            width: 220px;
+            white-space: nowrap;            /* empêche le retour à la ligne */
+            overflow: hidden;               /* masque le texte qui déborde */
+            text-overflow: ellipsis;        /* tronque le texte avec "..." */
+        }
+        transition: 5000ms ease-out;
     }
 }
-*/
+
 .line {
     border: none; /* Supprime les bordures par défaut */
     height: 3px; /* Épaisseur de la ligne */

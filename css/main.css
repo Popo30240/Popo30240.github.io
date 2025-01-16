@@ -95,7 +95,7 @@ body.loaded #content {
   /* 3. Par défaut, le cœur est réduit de façon à ne pas le voir.
   On utilise un transform direct pour l'état "non coché". */
   transform: translateX(12px) translateY(12px) scale(0.01);
-  transition: transform 5000ms;
+  transition: transform 4000ms ease-in;
 }
 .containerHeart__heartOutline {
   /* On dessine un contour du coeur pour visualiser la forme (optionnel) */
@@ -107,6 +107,7 @@ body.loaded #content {
 input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   /* 4. Quand la checkbox est cochée, on lance l’animation du cœur qui grossit jusqu'à prendre sa taille initial.
   Donnant un effet de remplissage en (4s).*/
+  transition: 5000ms ease-out;
   transform: scale(1);
 }
 
@@ -174,13 +175,12 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
 .backgroundRectangle {
   display: flex;
   align-items: center;
-  border-radius: 15px 15px;
-  width: 349px;
-  height: 69px;
-  padding: 0 10px 0 10px;
+  border-radius: 20px 20px;
+  width: 280px;
+  height: 65px;
+  padding: 5px 20px 5px 20px;
   margin: 15px;
   filter: drop-shadow(1px 5px 7px rgba(0, 0, 0, 0.2));
-  transition: width 0.6s ease;
 }
 .backgroundRectangle--backgroundColorGreyLight {
   background: #F2F2F2;
@@ -194,17 +194,11 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
 .backgroundRectangle a {
   text-decoration: none;
   color: black;
-  padding-left: 10px;
+  padding-left: 20px;
   font-weight: 500;
 }
 .backgroundRectangle--hoverPrimary-color:hover i {
   color: #9356DC;
-}
-.backgroundRectangle__animation:hover {
-  width: 70%;
-}
-.backgroundRectangle__animation:hover i {
-  color: #99E2D0;
 }
 
 .card {
@@ -360,51 +354,73 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   font-size: 16px;
   font-weight: 300;
 }
-.menu li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .menu h3 {
   font-size: 18px;
 }
 .menu p {
   font-size: 15px;
 }
-.menu span {
-  font-size: 15px;
+.menu__description {
+  padding-left: 10px;
+}
+.menu__price {
   font-weight: 700;
+  padding: 20px 10px 0 0;
+  margin-left: auto;
 }
 
-/*
 .backgroundRectangle--backgroundColorWhite {
-    & div:nth-child(3) {
-        display:none;
-    }
-    &:active {
-        display:flex;
-        justify-content: center;
-        align-items: center;
-
-        //position: relative;
-        //left: 10px;
-
-        height: 20px;
-        width: 69px;
-
-        border-radius: 0 15px 15px 0;
-
-        background-color: $tertiary-color;
-
-        & i {
-            font-size: 25px;
-            color:$tertiary-color;
-            border-radius:50%;
-            background-color: white;
-        }
-    }
+  width: 349px;
+  height: 69px;
+  padding: 0;
+  /* Si l'élément n'est pas survolé alors il n'est plus dans le flux DOM */
+  /* Si l'élément est survolé alors il est dans le flux du DOM */
 }
-*/
+.backgroundRectangle--backgroundColorWhite:not(:hover) .menu__checkAnimation {
+  display: none;
+}
+.backgroundRectangle--backgroundColorWhite:hover {
+  transition: 5000ms ease-out;
+}
+@keyframes checkAnimationFromRight {
+  0% {
+    transform: translateX(50px); /* Part à droite*/
+  }
+  100% {
+    transform: translateX(0); /* Remonte complètement */
+  }
+}
+.backgroundRectangle--backgroundColorWhite:hover .menu__checkAnimation {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 69px;
+  width: 59px;
+  border-radius: 0 15px 15px 0;
+  background-color: #99E2D0;
+  animation: checkAnimationFromRight 4s forwards ease;
+}
+.backgroundRectangle--backgroundColorWhite:hover .menu__checkAnimation i {
+  display: flex;
+  font-size: 25px;
+  color: #99E2D0;
+  border-radius: 50%;
+  background-color: white;
+}
+.backgroundRectangle--backgroundColorWhite:hover .menu__description h3 {
+  width: 220px;
+  white-space: nowrap; /* empêche le retour à la ligne */
+  overflow: hidden; /* masque le texte qui déborde */
+  text-overflow: ellipsis; /* tronque le texte avec "..." */
+}
+.backgroundRectangle--backgroundColorWhite:hover .menu__description p {
+  width: 220px;
+  white-space: nowrap; /* empêche le retour à la ligne */
+  overflow: hidden; /* masque le texte qui déborde */
+  text-overflow: ellipsis; /* tronque le texte avec "..." */
+}
+
 .line {
   border: none; /* Supprime les bordures par défaut */
   height: 3px; /* Épaisseur de la ligne */
