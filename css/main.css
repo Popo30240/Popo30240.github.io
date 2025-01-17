@@ -348,6 +348,45 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   position: relative;
   top: -40px;
 }
+.menu__Enter ol {
+  /* Animation d'apparition */
+  animation: fadeInEnter 15s ease forwards;
+}
+@keyframes fadeInEnter {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.menu__Dishes ol {
+  /* Animation d'apparition */
+  animation: fadeInDishes 30s ease forwards;
+}
+@keyframes fadeInDishes {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.menu__Desserts ol {
+  /* Animation d'apparition */
+  animation: fadeInDesserts 45s ease forwards;
+}
+@keyframes fadeInDesserts {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .menu h2 {
   padding-top: 30px;
   font-family: Roboto;
@@ -367,48 +406,6 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   font-weight: 700;
   padding: 20px 10px 0 0;
   margin-left: auto;
-}
-
-.menu__Enter ol {
-  /* Animation d'apparition */
-  animation: fadeInEnter 15s ease forwards;
-}
-@keyframes fadeInEnter {
-  0% {
-    opacity: 0;
-    pointer-events: none;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.menu__Dishes ol {
-  /* Animation d'apparition */
-  animation: fadeInDishes 30s ease forwards;
-}
-@keyframes fadeInDishes {
-  0% {
-    opacity: 0;
-    pointer-events: none;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.menu__Desserts ol {
-  /* Animation d'apparition */
-  animation: fadeInDesserts 45s ease forwards;
-}
-@keyframes fadeInDesserts {
-  0% {
-    opacity: 0;
-    pointer-events: none;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .backgroundRectangle--backgroundColorWhite {
@@ -450,12 +447,7 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   border-radius: 50%;
   background-color: white;
 }
-.backgroundRectangle--backgroundColorWhite:hover .menu__description h3 {
-  width: 220px;
-  white-space: nowrap; /* empêche le retour à la ligne */
-  overflow: hidden; /* masque le texte qui déborde */
-  text-overflow: ellipsis; /* tronque le texte avec "..." */
-}
+.backgroundRectangle--backgroundColorWhite:hover .menu__description h3,
 .backgroundRectangle--backgroundColorWhite:hover .menu__description p {
   width: 220px;
   white-space: nowrap; /* empêche le retour à la ligne */

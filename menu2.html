@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu - La note enchantée</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- police roboto -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+        <!-- police raleway -->
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap" rel="stylesheet">
+        <!-- importation d'icône -->
+        <script src="https://kit.fontawesome.com/8e472dab1d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./css/main.css">
+    </head>
+
+    <body class="loaded">
+
+        <!-- On crée un gradient de deux couleurs en SVG  -->
+        <svg aria-hidden="true" focusable="false" style="width:0;height:0;position:absolute;">
+            <linearGradient id="gradient-horizontal" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#9356DC" />
+              <stop offset="100%" stop-color="#FF79DA" />
+            </linearGradient>
+        </svg>
+
+        <!-- Loader -->
+        <div id="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Contenu de la page -->
+        <div id="content">
+
+            <header class="headernavbarMenu">
+
+                <nav class="navbarMenu">
+
+                    <div class="navbar__link">
+                        <a href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
+                    </div>
+
+                    <div class="navbar__title">
+                        <p>ohmyfood</p>
+                    </div>
+
+                </nav>
+
+                <img src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Image montrant un plat gastronomique">
+
+            </header>
+
+            <main class="backgroundMenu">
+
+                <section class="menu">
+
+                    <div class="menuTitle">
+
+                        <h1>La note enchantée</h1>
+
+                        <div class="card__icone">
+                            <!-- toggle5 = le coeur numéro 5 -->
+                            <input type="checkbox" id="toggle5">
+                            <label for="toggle5">
+                                <div class="containerHeart">
+
+                                    <svg width="100%" viewBox="0 0 24 24">
+                                
+                                    <defs>
+                                        <!-- ClipPath en forme de coeur -->
+                                        <clipPath id="heartClip">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                        </clipPath>
+                                    </defs>
+                                
+                                    <!--
+                                        Rectangle qui sera "découpé" par la forme du coeur (clip-path).
+                                        Il fait la taille du SVG (24x24).
+                                        Il est coloré avec un dégradé de deux couleurs.
+                                        Il se déplace de bas en haut via l'animation.
+                                    -->
+                                    <rect 
+                                        class="containerHeart__fillRect"
+                                        x="0" y="0"
+                                        width="24" height="24"
+                                        fill=url(#gradient-horizontal)
+                                        clip-path="url(#heartClip)"
+                                    />
+                                
+                                    <!-- Optionnel : contour du coeur pour repère visuel -->
+                                    <path 
+                                        class="containerHeart__heartOutline"
+                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                    />
+                                    </svg>
+
+                                </div>
+
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <h2>ENTRÉÉS</h2>
+
+                    <hr class="line">
+
+                    <div class="functioning__link menu__Enter">
+                        <ol>   
+
+                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                <div class="menu__description">
+                                    <h3>Ravioles de foie gras</h3>
+                                    <p>Accompagnées de leur à la truffe</p>
+                                </div>
+                                <div class="menu__price">
+                                    <P>25€</P>
+                                </div>
+                                <div class="menu__checkAnimation">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <input type="checkbox">
+                                </div>
+                            </li>
+                            
+                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                <div class="menu__description">
+                                    <h3>Caviar osciètre</h3>
+                                    <p>Sur blini à la farine de blé noir</p>
+                                </div>
+                                <div class="menu__price">
+                                    <p>35€</p>
+                                </div>
+                                <div class="menu__checkAnimation">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <input type="checkbox">
+                                </div>
+                            </li>
+                            
+                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                <div class="menu__description">
+                                    <h3>Homar et espuma de potiron</h3>
+                                    <p>Marinées aux zestes d'orange</p>
+                                </div>
+                                <div class="menu__price">
+                                    <p>20€</p>
+                                </div>
+                                <div class="menu__checkAnimation">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <input type="checkbox">
+                                </div>
+                            </li>
+
+                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                <div class="menu__description">
+                                    <h3>Foie gras de canard cuit entier</h3>
+                                    <p>Confiture et pain toasté</p>
+                                </div>
+                                <div class="menu__price">
+                                    <p>35€</p>
+                                </div>
+                                <div class="menu__checkAnimation">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <input type="checkbox">
+                                </div>
+                            </li>
+
+                        </ol>
+
+                    </div>
+
+                    <h2>PLATS</h2>
+
+                    <hr class="line">
+
+                    <div class="functioning__link menu__Dishes">
+                        <ol>   
+
+                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                <div class="menu__description">
+                                    <h3>Noix de coquilles Saint-Jacques</h3>
+                                    <p>Sur lit de purée de céleri-rave</p>
+                                </div>
+                                <div class="menu__price">
+                                    <p>40€</p>
+                                </div>
+                                <div class="menu__checkAnimation">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <input type="checkbox">
+                                </div>
+                            </li>
+                            
+                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                <div class="menu__description">
+                                    <h3>Langoustine poêlée</h3>
+                                    <p>Purée de patate douce</p>
+                                </div>
+                                <div class="menu__price">
+                                    <p>35€</p>
+                                </div>
+                                <div class="menu__checkAnimation">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <input type="checkbox">
+                                </div>
+                            </li>
+                            
+                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                <div class="menu__description">
+                                    <h3>Mijoté queue de bœuf</h3>
+                                    <p>Et riz sauvage aux zestes de citron</p>
+                                </div>
+                                <div class="menu__price">
+                                    <p>45€</p>
+                                </div>
+                                <div class="menu__checkAnimation">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <input type="checkbox">
+                                </div>
+                            </li>
+
+                        </ol>
+
+                    </div>
+
+                    <h2>DESSERTS</h2>
+
+                    <hr class="line">
+
+                    <div class="functioning__link menu__Desserts">
+                        <ol>   
+
+                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                <div class="menu__description">
+                                    <h3>Macaron noisette et chocolat</h3>
+                                    <p>Glace au caramel brun et sel de Guérande</p>
+                                </div>
+                                <div class="menu__price">
+                                    <p>18€</p>
+                                </div>
+                                <div class="menu__checkAnimation">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <input type="checkbox">
+                                </div>
+                            </li>
+                            
+                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                <div class="menu__description">
+                                    <h3>Baba au rhum revisité</h3>
+                                    <p>Avec son coulis de citron</p>
+                                </div>
+                                <div class="menu__price">
+                                    <p>22€</p>
+                                </div>
+                                <div class="menu__checkAnimation">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <input type="checkbox">
+                                </div>
+                            </li>
+                            
+                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                <div class="menu__description">
+                                    <h3>Tarte au citron meringuée</h3>
+                                    <p>Destructurée</p>
+                                </div>
+                                <div class="menu__price">
+                                    <p>23€</p>
+                                </div>
+                                <div class="menu__checkAnimation">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <input type="checkbox">
+                                </div>
+                            </li>
+
+                        </ol>
+
+                    </div>
+
+                    <div class="orderButton">
+                        <a href="#" class="cta1">Commander</a>
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="footer">
+
+                <h4>ohmyfood</h4>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-utensils"></i>
+                        <a href="#">Proposer un restaurant</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-handshake-angle"></i>
+                        <a href="#">Devenir partenaire</a>
+                    </li>
+                    <li>
+                        <a href="#">Mentions légales</a>
+                    </li>
+                    <li>
+                        <a href="mailto:anthonymackiw@outlook.fr">Contact</a>
+                    </li>
+                </ul>
+
+            </footer> 
+
+        </div>   
+
+    </body>
+
+</html>
