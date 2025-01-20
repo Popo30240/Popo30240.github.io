@@ -93,6 +93,9 @@
 
     padding: 0;
 
+    /* Permet à l'élément CheckAnimation d'être caché quant il est dehors*/
+    overflow:hidden;
+
     /* Si l'élément n'est pas survolé alors il n'est plus dans le flux DOM */
     &:not(:hover) {
         .menu__checkAnimation {
@@ -101,13 +104,17 @@
     } 
     /* Si l'élément est survolé alors il est dans le flux du DOM */
     &:hover {
-        @keyframes checkAnimationFromRight {
-            0% {
-            transform: translateX(40px);    /* Part à droite*/
-            }
-            100% {
-            transform: translateX(0);       /* Remonte complètement */
-            }
+
+        .menu__description h3, 
+        .menu__description p {
+            width: 220px;
+            white-space: nowrap;            /* empêche le retour à la ligne */
+            overflow: hidden;               /* masque le texte qui déborde */
+            text-overflow: ellipsis;        /* tronque le texte avec "..." */
+        }
+
+        .menu__price {
+            animation: slideFromRight 2s ease-in-out forwards;
         }
 
         .menu__checkAnimation {
@@ -124,7 +131,7 @@
     
             background-color: $tertiary-color;
 
-            animation: checkAnimationFromRight 4s forwards ease;
+            animation: slideFromRight 2s ease-in-out forwards;
     
             & i {
                 display:flex;
@@ -136,15 +143,6 @@
 
         }
 
-        .menu__description h3, 
-        .menu__description p {
-            width: 220px;
-            white-space: nowrap;            /* empêche le retour à la ligne */
-            overflow: hidden;               /* masque le texte qui déborde */
-            text-overflow: ellipsis;        /* tronque le texte avec "..." */
-        }
-
-        transition: 5000ms ease-out;
     }
 }
 

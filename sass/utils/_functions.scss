@@ -1,0 +1,9 @@
+/* Animation pour faire coulisser l'élément CheckAnimation de → à ← */
+@keyframes slideFromRight {
+    from {
+        transform: translateX(165%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

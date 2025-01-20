@@ -50,6 +50,12 @@
 }
 
 /* Rendre le contenu visible après le loader */
-body.loaded #content {
+.loaded #content {
     display: block;
 }
+
+.loaded .spinner {
+    display: block;
+}
+
+

@@ -81,7 +81,11 @@ input[type=checkbox] {
 }
 
 /* Rendre le contenu visible après le loader */
-body.loaded #content {
+.loaded #content {
+  display: block;
+}
+
+.loaded .spinner {
   display: block;
 }
 
@@ -93,9 +97,9 @@ body.loaded #content {
 }
 .containerHeart__fillRect {
   /* 3. Par défaut, le cœur est réduit de façon à ne pas le voir.
-  On utilise un transform direct pour l'état "non coché". */
+  On utilise un transform avec sa valeur translateX (axe Horizontal) translateY (axe Vertical) pour centré le cœur dans l'état "non coché". */
   transform: translateX(12px) translateY(12px) scale(0.01);
-  transition: transform 4000ms ease-in;
+  transition: transform 1000ms ease-in;
 }
 .containerHeart__heartOutline {
   /* On dessine un contour du coeur pour visualiser la forme (optionnel) */
@@ -106,8 +110,8 @@ body.loaded #content {
 
 input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   /* 4. Quand la checkbox est cochée, on lance l’animation du cœur qui grossit jusqu'à prendre sa taille initial.
-  Donnant un effet de remplissage en (4s).*/
-  transition: 5000ms ease-out;
+  Donnant un effet de remplissage en (1s).*/
+  transition: 1000ms ease-out;
   transform: scale(1);
 }
 
@@ -160,7 +164,7 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 186px;
+  width: 218px;
   height: 50px;
   text-decoration: none;
   color: white;
@@ -412,22 +416,23 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   width: 349px;
   height: 69px;
   padding: 0;
+  /* Permet à l'élément CheckAnimation d'être caché quant il est dehors*/
+  overflow: hidden;
   /* Si l'élément n'est pas survolé alors il n'est plus dans le flux DOM */
   /* Si l'élément est survolé alors il est dans le flux du DOM */
 }
 .backgroundRectangle--backgroundColorWhite:not(:hover) .menu__checkAnimation {
   display: none;
 }
-.backgroundRectangle--backgroundColorWhite:hover {
-  transition: 5000ms ease-out;
+.backgroundRectangle--backgroundColorWhite:hover .menu__description h3,
+.backgroundRectangle--backgroundColorWhite:hover .menu__description p {
+  width: 220px;
+  white-space: nowrap; /* empêche le retour à la ligne */
+  overflow: hidden; /* masque le texte qui déborde */
+  text-overflow: ellipsis; /* tronque le texte avec "..." */
 }
-@keyframes checkAnimationFromRight {
-  0% {
-    transform: translateX(40px); /* Part à droite*/
-  }
-  100% {
-    transform: translateX(0); /* Remonte complètement */
-  }
+.backgroundRectangle--backgroundColorWhite:hover .menu__price {
+  animation: slideFromRight 2s ease-in-out forwards;
 }
 .backgroundRectangle--backgroundColorWhite:hover .menu__checkAnimation {
   display: block;
@@ -438,7 +443,7 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   width: 59px;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  animation: checkAnimationFromRight 4s forwards ease;
+  animation: slideFromRight 2s ease-in-out forwards;
 }
 .backgroundRectangle--backgroundColorWhite:hover .menu__checkAnimation i {
   display: flex;
@@ -446,13 +451,6 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   color: #99E2D0;
   border-radius: 50%;
   background-color: white;
-}
-.backgroundRectangle--backgroundColorWhite:hover .menu__description h3,
-.backgroundRectangle--backgroundColorWhite:hover .menu__description p {
-  width: 220px;
-  white-space: nowrap; /* empêche le retour à la ligne */
-  overflow: hidden; /* masque le texte qui déborde */
-  text-overflow: ellipsis; /* tronque le texte avec "..." */
 }
 
 .line {
@@ -467,6 +465,16 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+/* Animation pour faire coulisser l'élément CheckAnimation de → à ← */
+@keyframes slideFromRight {
+  from {
+    transform: translateX(165%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
