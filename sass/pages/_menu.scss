@@ -23,49 +23,41 @@
     position: relative;
     top: -40px;
     &__Enter ol {
-        /* Animation d'apparition */
-        @keyframes fadeInEnter {
-            0% {
-                opacity: 0;
-                pointer-events: none;
-            }
-            100% {
-                opacity: 1;  
-            }
-        }
-        animation: fadeInEnter 15s ease forwards;
+        animation: fadeIn 20s ease forwards;
     }
     &__Dishes ol {
-        /* Animation d'apparition */
-        @keyframes fadeInDishes {
-            0% {
-                opacity: 0;
-                pointer-events: none;
-            }
-            100% {
-                opacity: 1;  
-            }
-        }
-        animation: fadeInDishes 30s ease forwards;
+        animation: fadeIn 30s ease forwards;
     }
     &__Desserts ol {
-        /* Animation d'apparition */
-        @keyframes fadeInDesserts {
-            0% {
-                opacity: 0;
-                pointer-events: none;
-            }
-            100% {
-                opacity: 1;  
-            }
-        }
-        animation: fadeInDesserts 45s ease forwards;
+        animation: fadeIn 45s ease forwards;
     }
     & h2 {
         padding-top: 30px;
         font-family: Roboto;
         font-size: 16px;
         font-weight: 300;
+    }
+    &__checkAnimation {
+        display:block;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 69px;
+        width: 59px;
+
+        border-radius: 0 15px 15px 0;
+
+        background-color: $tertiary-color;
+
+        & i {
+            display:flex;
+            font-size: 25px;
+            color:$tertiary-color;
+            border-radius:50%;
+            background-color: white;
+        }
     }
     & h3 {
         font-size: 18px;
@@ -96,14 +88,17 @@
     /* Permet à l'élément CheckAnimation d'être caché quant il est dehors*/
     overflow:hidden;
 
-    /* Si l'élément n'est pas survolé alors il n'est plus dans le flux DOM */
-    &:not(:hover) {
+    /* Si l'élément n'est pas activé alors l'élément checkAnimation est déplacé hors de l'élement et caché */
+    &:not(:active) {
         .menu__checkAnimation {
-            display:none;
+            animation: slideFromLeft 1s ease-in-out forwards;
+        }
+        .menu__price {
+            animation: slideFromLeft 1s ease-in-out forwards;
         }
     } 
-    /* Si l'élément est survolé alors il est dans le flux du DOM */
-    &:hover {
+    /* Si l'élément est activé alors l'élément checkAnimation vient coulisser */
+    &:active {
 
         .menu__description h3, 
         .menu__description p {
@@ -118,29 +113,7 @@
         }
 
         .menu__checkAnimation {
-            display:block;
-        
-            display: flex;
-            align-items: center;
-            justify-content: center;
-    
-            height: 69px;
-            width: 59px;
-
-            border-radius: 0 15px 15px 0;
-    
-            background-color: $tertiary-color;
-
             animation: slideFromRight 2s ease-in-out forwards;
-    
-            & i {
-                display:flex;
-                font-size: 25px;
-                color:$tertiary-color;
-                border-radius:50%;
-                background-color: white;
-            }
-
         }
 
     }
