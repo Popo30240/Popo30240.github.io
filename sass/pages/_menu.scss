@@ -71,8 +71,6 @@
 
         background-color: $tertiary-color;
 
-        transition: transform 1000ms ease-out;
-
         & i {
             display:flex;
             font-size: 25px;
@@ -96,9 +94,6 @@
         padding: 20px 10px 0 0;
 
         margin-left: auto;
-
-        transition: transform 1000ms ease-out;
-
     }
 }
 
@@ -109,16 +104,27 @@
 
     padding: 0;
 
-    /* Permet à l'élément CheckAnimation d'être caché quant il est dehors*/
+    /* Permet à l'élément CheckAnimation d'être caché quant il est en-dehors*/
     overflow:hidden;
 
     /* Si l'élément n'est pas activé alors l'élément checkAnimation est déplacé hors de l'élement et caché */
     &:not(:active) {
+        .menu__description h3, 
+        .menu__description p {
+            width: 220px;
+            white-space: nowrap;            /* empêche le retour à la ligne */
+            overflow: hidden;               /* masque le texte qui déborde */
+            text-overflow: ellipsis;        /* tronque le texte avec "..." */
+        }
         .menu__price {
+            /* On déplace l'élément de 150% à droite*/
             transform: translateX(150%);
+            transition: transform 500ms ease-in;
         }
         .menu__checkAnimation {
+            /* On déplace l'élément de 150% à droite*/
             transform: translateX(150%);
+            transition: transform 500ms ease-in;
         }
     } 
     /* Si l'élément est activé alors l'élément checkAnimation vient coulisser */
@@ -133,11 +139,15 @@
         }
 
         .menu__price {
+            /* On déplace l'élément sur son point initial*/
             transform: translateX(0%);
+            transition: transform 1000ms ease-out;
         }
 
         .menu__checkAnimation {
+            /* On déplace l'élément sur son point initial*/
             transform: translateX(0%);
+            transition: transform 1000ms ease-out;
         }
 
     }

@@ -79,7 +79,8 @@ input[type=checkbox] {
 .containerHeart__fillRect {
   /* 3. Par défaut, le cœur est réduit de façon à ne pas le voir.
   On utilise un transform avec sa valeur translateX (axe Horizontal) translateY (axe Vertical) pour centré le cœur dans l'état "non coché". */
-  transform: translateX(12px) translateY(12px) scale(0.01);
+  transform: scale(0.01);
+  transform-origin: center;
   transition: transform 1000ms ease-in;
 }
 .containerHeart__heartOutline {
@@ -371,7 +372,6 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   width: 59px;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  transition: transform 1000ms ease-out;
 }
 .menu__checkAnimation i {
   display: flex;
@@ -393,23 +393,33 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   font-weight: 700;
   padding: 20px 10px 0 0;
   margin-left: auto;
-  transition: transform 1000ms ease-out;
 }
 
 .backgroundRectangle--backgroundColorWhite {
   width: 349px;
   height: 69px;
   padding: 0;
-  /* Permet à l'élément CheckAnimation d'être caché quant il est dehors*/
+  /* Permet à l'élément CheckAnimation d'être caché quant il est en-dehors*/
   overflow: hidden;
   /* Si l'élément n'est pas activé alors l'élément checkAnimation est déplacé hors de l'élement et caché */
   /* Si l'élément est activé alors l'élément checkAnimation vient coulisser */
 }
+.backgroundRectangle--backgroundColorWhite:not(:active) .menu__description h3,
+.backgroundRectangle--backgroundColorWhite:not(:active) .menu__description p {
+  width: 220px;
+  white-space: nowrap; /* empêche le retour à la ligne */
+  overflow: hidden; /* masque le texte qui déborde */
+  text-overflow: ellipsis; /* tronque le texte avec "..." */
+}
 .backgroundRectangle--backgroundColorWhite:not(:active) .menu__price {
+  /* On déplace l'élément de 150% à droite*/
   transform: translateX(150%);
+  transition: transform 500ms ease-in;
 }
 .backgroundRectangle--backgroundColorWhite:not(:active) .menu__checkAnimation {
+  /* On déplace l'élément de 150% à droite*/
   transform: translateX(150%);
+  transition: transform 500ms ease-in;
 }
 .backgroundRectangle--backgroundColorWhite:active .menu__description h3,
 .backgroundRectangle--backgroundColorWhite:active .menu__description p {
@@ -419,10 +429,14 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   text-overflow: ellipsis; /* tronque le texte avec "..." */
 }
 .backgroundRectangle--backgroundColorWhite:active .menu__price {
+  /* On déplace l'élément sur son point initial*/
   transform: translateX(0%);
+  transition: transform 1000ms ease-out;
 }
 .backgroundRectangle--backgroundColorWhite:active .menu__checkAnimation {
+  /* On déplace l'élément sur son point initial*/
   transform: translateX(0%);
+  transition: transform 1000ms ease-out;
 }
 
 .line {

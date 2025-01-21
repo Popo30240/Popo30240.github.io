@@ -8,7 +8,8 @@
     &__fillRect {
         /* 3. Par défaut, le cœur est réduit de façon à ne pas le voir.
         On utilise un transform avec sa valeur translateX (axe Horizontal) translateY (axe Vertical) pour centré le cœur dans l'état "non coché". */
-        transform: translateX(12px) translateY(12px) scale(0.01); 
+        transform: scale(0.01); 
+        transform-origin: center;
         transition: transform 1000ms ease-in;
     }
     &__heartOutline {
