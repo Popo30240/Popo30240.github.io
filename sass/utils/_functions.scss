@@ -1,22 +1,3 @@
-/* Animation pour faire coulisser l'élément CheckAnimation de → à ← */
-@keyframes slideFromRight {
-    from {
-        transform: translateX(165%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-/* Animation pour faire coulisser l'élément CheckAnimation de ← à → */
-@keyframes slideFromLeft {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(165%);
-    }
-}
-
 /* Animation d'apparition */
 @keyframes fadeIn {
     0% {
@@ -38,6 +19,7 @@
         visibility: hidden;
     }
 }
+
 /* Animation du spinner */
 @keyframes spin {
     0% {
