@@ -23,13 +23,34 @@
     position: relative;
     top: -40px;
     &__Enter ol {
-        animation: fadeIn 20s ease forwards;
+        /* Nom de l'animation */
+        animation-name: fadeIn;
+        
+        /* Durée totale de l’animation */
+        animation-duration: 10s;
+        
+        /* Définition de la fonction d’accélération */
+        animation-timing-function: ease forwards;     
     }
     &__Dishes ol {
-        animation: fadeIn 30s ease forwards;
+        /* Nom de l'animation */
+        animation-name: fadeIn;
+        
+        /* Durée totale de l’animation */
+        animation-duration: 20s;
+        
+        /* Définition de la fonction d’accélération */
+        animation-timing-function: ease forwards;
     }
     &__Desserts ol {
-        animation: fadeIn 45s ease forwards;
+        /* Nom de l'animation */
+        animation-name: fadeIn;
+        
+        /* Durée totale de l’animation */
+        animation-duration: 30s;
+        
+        /* Définition de la fonction d’accélération */
+        animation-timing-function: ease forwards;
     }
     & h2 {
         padding-top: 30px;
@@ -38,7 +59,6 @@
         font-weight: 300;
     }
     &__checkAnimation {
-        display:block;
         
         display: flex;
         align-items: center;
@@ -50,6 +70,8 @@
         border-radius: 0 15px 15px 0;
 
         background-color: $tertiary-color;
+
+        transition: transform 1000ms ease-out;
 
         & i {
             display:flex;
@@ -75,6 +97,8 @@
 
         margin-left: auto;
 
+        transition: transform 1000ms ease-out;
+
     }
 }
 
@@ -90,11 +114,11 @@
 
     /* Si l'élément n'est pas activé alors l'élément checkAnimation est déplacé hors de l'élement et caché */
     &:not(:active) {
-        .menu__checkAnimation {
-            animation: slideFromLeft 1s ease-in-out forwards;
-        }
         .menu__price {
-            animation: slideFromLeft 1s ease-in-out forwards;
+            transform: translateX(150%);
+        }
+        .menu__checkAnimation {
+            transform: translateX(150%);
         }
     } 
     /* Si l'élément est activé alors l'élément checkAnimation vient coulisser */
@@ -109,11 +133,11 @@
         }
 
         .menu__price {
-            animation: slideFromRight 2s ease-in-out forwards;
+            transform: translateX(0%);
         }
 
         .menu__checkAnimation {
-            animation: slideFromRight 2s ease-in-out forwards;
+            transform: translateX(0%);
         }
 
     }

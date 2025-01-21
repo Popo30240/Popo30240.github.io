@@ -334,13 +334,28 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   top: -40px;
 }
 .menu__Enter ol {
-  animation: fadeIn 20s ease forwards;
+  /* Nom de l'animation */
+  animation-name: fadeIn;
+  /* Durée totale de l’animation */
+  animation-duration: 10s;
+  /* Définition de la fonction d’accélération */
+  animation-timing-function: ease forwards;
 }
 .menu__Dishes ol {
-  animation: fadeIn 30s ease forwards;
+  /* Nom de l'animation */
+  animation-name: fadeIn;
+  /* Durée totale de l’animation */
+  animation-duration: 20s;
+  /* Définition de la fonction d’accélération */
+  animation-timing-function: ease forwards;
 }
 .menu__Desserts ol {
-  animation: fadeIn 45s ease forwards;
+  /* Nom de l'animation */
+  animation-name: fadeIn;
+  /* Durée totale de l’animation */
+  animation-duration: 30s;
+  /* Définition de la fonction d’accélération */
+  animation-timing-function: ease forwards;
 }
 .menu h2 {
   padding-top: 30px;
@@ -349,7 +364,6 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   font-weight: 300;
 }
 .menu__checkAnimation {
-  display: block;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -357,6 +371,7 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   width: 59px;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
+  transition: transform 1000ms ease-out;
 }
 .menu__checkAnimation i {
   display: flex;
@@ -378,6 +393,7 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   font-weight: 700;
   padding: 20px 10px 0 0;
   margin-left: auto;
+  transition: transform 1000ms ease-out;
 }
 
 .backgroundRectangle--backgroundColorWhite {
@@ -389,11 +405,11 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   /* Si l'élément n'est pas activé alors l'élément checkAnimation est déplacé hors de l'élement et caché */
   /* Si l'élément est activé alors l'élément checkAnimation vient coulisser */
 }
-.backgroundRectangle--backgroundColorWhite:not(:active) .menu__checkAnimation {
-  animation: slideFromLeft 1s ease-in-out forwards;
-}
 .backgroundRectangle--backgroundColorWhite:not(:active) .menu__price {
-  animation: slideFromLeft 1s ease-in-out forwards;
+  transform: translateX(150%);
+}
+.backgroundRectangle--backgroundColorWhite:not(:active) .menu__checkAnimation {
+  transform: translateX(150%);
 }
 .backgroundRectangle--backgroundColorWhite:active .menu__description h3,
 .backgroundRectangle--backgroundColorWhite:active .menu__description p {
@@ -403,10 +419,10 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   text-overflow: ellipsis; /* tronque le texte avec "..." */
 }
 .backgroundRectangle--backgroundColorWhite:active .menu__price {
-  animation: slideFromRight 2s ease-in-out forwards;
+  transform: translateX(0%);
 }
 .backgroundRectangle--backgroundColorWhite:active .menu__checkAnimation {
-  animation: slideFromRight 2s ease-in-out forwards;
+  transform: translateX(0%);
 }
 
 .line {
@@ -423,24 +439,6 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   margin-top: 20px;
 }
 
-/* Animation pour faire coulisser l'élément CheckAnimation de → à ← */
-@keyframes slideFromRight {
-  from {
-    transform: translateX(165%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-/* Animation pour faire coulisser l'élément CheckAnimation de ← à → */
-@keyframes slideFromLeft {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(165%);
-  }
-}
 /* Animation d'apparition */
 @keyframes fadeIn {
   0% {
