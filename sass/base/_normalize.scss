@@ -12,24 +12,28 @@ main h1, h2 {
 .menuTitle { 
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-around;
+    @media (min-width: 1024px) {
+        & {
+            justify-content: center;
+        }
+    }
 
     & h1 {
         font-family: Shrikhand;
         font-size: 28px;
         font-weight: 400;
+        @media (min-width: 1024px) {
+            & {
+                padding-right: 30px;
+            }
+        }
     }
 }
 
 h2 {
     padding-left: 10px;
-    @media (min-width: 768px) {
-        & {    
-            padding-left: 105px;
-        }
-    /* Styles adaptés aux tablettes, etc. */
-    }
 }
 
 /* On cache toutes les checkboxs et leurs espaces */

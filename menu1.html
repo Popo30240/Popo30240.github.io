@@ -59,221 +59,228 @@
 
             </header>
 
-            <main class="backgroundMenu">
+            <main>
 
-                <section class="menu">
+                <div class="backgroundMenu">
 
-                    <div class="menuTitle">
+                    <section class="menu">
 
-                        <h1>La palette du goût</h1>
+                        <div class="menuTitle">
 
-                        <div class="card__icone">
-                            <!-- toggle5 = le coeur numéro 5 -->
-                            <input type="checkbox" id="toggle5">
-                            <label for="toggle5">
-                                <div class="containerHeart">
+                            <h1>La palette du goût</h1>
 
-                                    <svg width="100%" viewBox="0 0 24 24">
-                                
-                                    <defs>
-                                        <!-- ClipPath en forme de coeur -->
-                                        <clipPath id="heartClip">
-                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                        </clipPath>
-                                    </defs>
-                                
-                                    <!--
-                                        Rectangle qui sera "découpé" par la forme du coeur (clip-path).
-                                        Il fait la taille du SVG (24x24).
-                                        Il est coloré avec un dégradé de deux couleurs.
-                                        Il se déplace de bas en haut via l'animation.
-                                    -->
-                                    <rect 
-                                        class="containerHeart__fillRect"
-                                        x="0" y="0"
-                                        width="24" height="24"
-                                        fill=url(#gradient-horizontal)
-                                        clip-path="url(#heartClip)"
-                                    />
-                                
-                                    <!-- Optionnel : contour du coeur pour repère visuel -->
-                                    <path 
-                                        class="containerHeart__heartOutline"
-                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                    />
-                                    </svg>
+                            <div class="card__icone">
+                                <!-- toggle5 = le coeur numéro 5 -->
+                                <input type="checkbox" id="toggle5">
+                                <label for="toggle5">
+                                    <div class="containerHeart">
 
-                                </div>
+                                        <svg width="100%" viewBox="0 0 24 24">
+                                    
+                                        <defs>
+                                            <!-- ClipPath en forme de coeur -->
+                                            <clipPath id="heartClip">
+                                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                            </clipPath>
+                                        </defs>
+                                    
+                                        <!--
+                                            Rectangle qui sera "découpé" par la forme du coeur (clip-path).
+                                            Il fait la taille du SVG (24x24).
+                                            Il est coloré avec un dégradé de deux couleurs.
+                                            Il se déplace de bas en haut via l'animation.
+                                        -->
+                                        <rect 
+                                            class="containerHeart__fillRect"
+                                            x="0" y="0"
+                                            width="24" height="24"
+                                            fill=url(#gradient-horizontal)
+                                            clip-path="url(#heartClip)"
+                                        />
+                                    
+                                        <!-- Optionnel : contour du coeur pour repère visuel -->
+                                        <path 
+                                            class="containerHeart__heartOutline"
+                                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                        />
+                                        </svg>
 
-                            </label>
+                                    </div>
+
+                                </label>
+                            </div>
+
                         </div>
 
-                    </div>
+                        <div class="functioning__link menu__Enter">
+                            <ol>   
+                                <div class="Titlemenu">
+                                    <h2>ENTRÉÉS</h2>
+            
+                                    <hr class="line">
+                                </div>
+                                <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                    <div class="menu__description">
+                                        <h3>Fricassée d'escargots</h3>
+                                        <p>Au piment d'Espelette</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <P>25€</P>
+                                    </div>
+                                    <div class="menu__checkAnimation">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <input type="checkbox">
+                                    </div>
+                                </li>
+                                
+                                <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                    <div class="menu__description">
+                                        <h3>Foie gras de canard mi-cuit</h3>
+                                        <p>Et ses copeaux de truffe noire</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p>35€</p>
+                                    </div>
+                                    <div class="menu__checkAnimation">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <input type="checkbox">
+                                    </div>
+                                </li>
+                                
+                                <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                    <div class="menu__description">
+                                        <h3>Œuf au plat</h3>
+                                        <p>Assaisonné à la truffe sur lit de caviar</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p>20€</p>
+                                    </div>
+                                    <div class="menu__checkAnimation">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <input type="checkbox">
+                                    </div>
+                                </li>
 
-                    <h2>ENTRÉÉS</h2>
+                            </ol>
 
-                    <hr class="line">
+                        </div>
 
-                    <div class="functioning__link menu__Enter">
-                        <ol>   
 
-                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
-                                <div class="menu__description">
-                                    <h3>Fricassée d'escargots</h3>
-                                    <p>Au piment d'Espelette</p>
-                                </div>
-                                <div class="menu__price">
-                                    <P>25€</P>
-                                </div>
-                                <div class="menu__checkAnimation">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                    <input type="checkbox">
-                                </div>
-                            </li>
-                            
-                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
-                                <div class="menu__description">
-                                    <h3>Foie gras de canard mi-cuit</h3>
-                                    <p>Et ses copeaux de truffe noire</p>
-                                </div>
-                                <div class="menu__price">
-                                    <p>35€</p>
-                                </div>
-                                <div class="menu__checkAnimation">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                    <input type="checkbox">
-                                </div>
-                            </li>
-                            
-                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
-                                <div class="menu__description">
-                                    <h3>Œuf au plat</h3>
-                                    <p>Assaisonné à la truffe sur lit de caviar</p>
-                                </div>
-                                <div class="menu__price">
-                                    <p>20€</p>
-                                </div>
-                                <div class="menu__checkAnimation">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                    <input type="checkbox">
-                                </div>
-                            </li>
+                        <div class="functioning__link menu__Dishes">
+                            <ol>   
 
-                        </ol>
+                                <div class="Titlemenu">
+                                    <h2>PLATS</h2>
+            
+                                    <hr class="line">
+                                </div>
+                                <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                    <div class="menu__description">
+                                        <h3>Filet de boeuf aux herbes</h3>
+                                        <p>Accompagné de sa ribambelle de légumes</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p>40€</p>
+                                    </div>
+                                    <div class="menu__checkAnimation">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <input type="checkbox">
+                                    </div>
+                                </li>
+                                
+                                <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                    <div class="menu__description">
+                                        <h3>Parmentier de queue de bœuf</h3>
+                                        <p>À la truffe noire sur sa purée de panais</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p>35€</p>
+                                    </div>
+                                    <div class="menu__checkAnimation">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <input type="checkbox">
+                                    </div>
+                                </li>
+                                
+                                <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                    <div class="menu__description">
+                                        <h3>Filet de turbot</h3>
+                                        <p>Aux agrumes</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p>44€</p>
+                                    </div>
+                                    <div class="menu__checkAnimation">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <input type="checkbox">
+                                    </div>
+                                </li>
 
-                    </div>
+                            </ol>
 
-                    <h2>PLATS</h2>
+                        </div>
 
-                    <hr class="line">
+                        <div class="functioning__link menu__Desserts">
+                            <ol>   
 
-                    <div class="functioning__link menu__Dishes">
-                        <ol>   
+                                <div class="Titlemenu">
+                                    <h2>DESSERTS</h2>
+            
+                                    <hr class="line">
+                                </div>
+                                <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                    <div class="menu__description">
+                                        <h3>Paris-Brest</h3>
+                                        <p>Revisité</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p>18€</p>
+                                    </div>
+                                    <div class="menu__checkAnimation">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <input type="checkbox">
+                                    </div>
+                                </li>
+                                
+                                <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                    <div class="menu__description">
+                                        <h3>Macaron au chocolat d'exception</h3>
+                                        <p>Et glace à la vanille de Madagascar</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p>22€</p>
+                                    </div>
+                                    <div class="menu__checkAnimation">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <input type="checkbox">
+                                    </div>
+                                </li>
+                                
+                                <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
+                                    <div class="menu__description">
+                                        <h3>Mousse au chocolat</h3>
+                                        <p>Au piment d'Espiguette et à la truffe noire</p>
+                                    </div>
+                                    <div class="menu__price">
+                                        <p>23€</p>
+                                    </div>
+                                    <div class="menu__checkAnimation">
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        <input type="checkbox">
+                                    </div>
+                                </li>
 
-                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
-                                <div class="menu__description">
-                                    <h3>Filet de boeuf aux herbes</h3>
-                                    <p>Accompagné de sa ribambelle de légumes</p>
-                                </div>
-                                <div class="menu__price">
-                                    <p>40€</p>
-                                </div>
-                                <div class="menu__checkAnimation">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                    <input type="checkbox">
-                                </div>
-                            </li>
-                            
-                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
-                                <div class="menu__description">
-                                    <h3>Parmentier de queue de bœuf</h3>
-                                    <p>À la truffe noire sur sa purée de panais</p>
-                                </div>
-                                <div class="menu__price">
-                                    <p>35€</p>
-                                </div>
-                                <div class="menu__checkAnimation">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                    <input type="checkbox">
-                                </div>
-                            </li>
-                            
-                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
-                                <div class="menu__description">
-                                    <h3>Filet de turbot</h3>
-                                    <p>Aux agrumes</p>
-                                </div>
-                                <div class="menu__price">
-                                    <p>44€</p>
-                                </div>
-                                <div class="menu__checkAnimation">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                    <input type="checkbox">
-                                </div>
-                            </li>
+                            </ol>
 
-                        </ol>
+                        </div>
 
-                    </div>
+                        <div class="orderButton">
+                            <a href="#" class="cta1">Commander</a>
+                        </div>
 
-                    <h2>DESSERTS</h2>
-
-                    <hr class="line">
-
-                    <div class="functioning__link menu__Desserts">
-                        <ol>   
-
-                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
-                                <div class="menu__description">
-                                    <h3>Paris-Brest</h3>
-                                    <p>Revisité</p>
-                                </div>
-                                <div class="menu__price">
-                                    <p>18€</p>
-                                </div>
-                                <div class="menu__checkAnimation">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                    <input type="checkbox">
-                                </div>
-                            </li>
-                            
-                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
-                                <div class="menu__description">
-                                    <h3>Macaron au chocolat d'exception</h3>
-                                    <p>Et glace à la vanille de Madagascar</p>
-                                </div>
-                                <div class="menu__price">
-                                    <p>22€</p>
-                                </div>
-                                <div class="menu__checkAnimation">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                    <input type="checkbox">
-                                </div>
-                            </li>
-                            
-                            <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
-                                <div class="menu__description">
-                                    <h3>Mousse au chocolat</h3>
-                                    <p>Au piment d'Espiguette et à la truffe noire</p>
-                                </div>
-                                <div class="menu__price">
-                                    <p>23€</p>
-                                </div>
-                                <div class="menu__checkAnimation">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                    <input type="checkbox">
-                                </div>
-                            </li>
-
-                        </ol>
-
-                    </div>
-
-                    <div class="orderButton">
-                        <a href="#" class="cta1">Commander</a>
-                    </div>
-
-                </section>
+                    </section>
+                    
+                </div>
 
             </main>
 
