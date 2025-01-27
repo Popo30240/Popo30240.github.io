@@ -23,34 +23,25 @@
     position: relative;
     top: -40px;
     &__Enter ol {
-        /* Nom de l'animation */
+        opacity: 0; /* état initial transparent */
         animation-name: fadeIn;
-        
-        /* Durée totale de l’animation */
-        animation-duration: 10s;
-        
-        /* Définition de la fonction d’accélération */
-        animation-timing-function: ease forwards;     
+        animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
+        animation-delay: 3s; /* Le délai qui doit se passer avant l'état final */  
+        animation-duration: 1s; 
     }
     &__Dishes ol {
-        /* Nom de l'animation */
+        opacity: 0; /* état initial transparent */
         animation-name: fadeIn;
-        
-        /* Durée totale de l’animation */
-        animation-duration: 20s;
-        
-        /* Définition de la fonction d’accélération */
-        animation-timing-function: ease forwards;
+        animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
+        animation-delay: 8s; /* Le délai qui doit se passer avant l'état final */  
+        animation-duration: 1s; 
     }
     &__Desserts ol {
-        /* Nom de l'animation */
+        opacity: 0; /* état initial transparent */
         animation-name: fadeIn;
-        
-        /* Durée totale de l’animation */
-        animation-duration: 30s;
-        
-        /* Définition de la fonction d’accélération */
-        animation-timing-function: ease forwards;
+        animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
+        animation-delay: 13s; /* Le délai qui doit se passer avant l'état final */  
+        animation-duration: 1s; 
     }
     & h2 {
         padding-top: 30px;

@@ -335,28 +335,25 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   top: -40px;
 }
 .menu__Enter ol {
-  /* Nom de l'animation */
+  opacity: 0; /* état initial transparent */
   animation-name: fadeIn;
-  /* Durée totale de l’animation */
-  animation-duration: 10s;
-  /* Définition de la fonction d’accélération */
-  animation-timing-function: ease forwards;
+  animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
+  animation-delay: 3s; /* Le délai qui doit se passer avant l'état final */
+  animation-duration: 1s;
 }
 .menu__Dishes ol {
-  /* Nom de l'animation */
+  opacity: 0; /* état initial transparent */
   animation-name: fadeIn;
-  /* Durée totale de l’animation */
-  animation-duration: 20s;
-  /* Définition de la fonction d’accélération */
-  animation-timing-function: ease forwards;
+  animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
+  animation-delay: 8s; /* Le délai qui doit se passer avant l'état final */
+  animation-duration: 1s;
 }
 .menu__Desserts ol {
-  /* Nom de l'animation */
+  opacity: 0; /* état initial transparent */
   animation-name: fadeIn;
-  /* Durée totale de l’animation */
-  animation-duration: 30s;
-  /* Définition de la fonction d’accélération */
-  animation-timing-function: ease forwards;
+  animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
+  animation-delay: 13s; /* Le délai qui doit se passer avant l'état final */
+  animation-duration: 1s;
 }
 .menu h2 {
   padding-top: 30px;
@@ -456,29 +453,38 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
 /* Animation d'apparition */
 @keyframes fadeIn {
   0% {
-    opacity: 0;
+    opacity: 0; /* Départ totalement transparent */
     pointer-events: none;
   }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.7;
+  }
   100% {
-    opacity: 1;
+    opacity: 1; /* Arrivée totalement opaque */
   }
 }
 /* Animation de disparition */
 @keyframes fadeOut {
-  0% {
+  from {
     opacity: 1;
   }
-  100% {
+  to {
     opacity: 0;
     visibility: hidden;
   }
 }
 /* Animation du spinner */
 @keyframes spin {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }

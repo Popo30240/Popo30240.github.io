@@ -1,20 +1,29 @@
 /* Animation d'apparition */
 @keyframes fadeIn {
     0% {
-        opacity: 0;
+        opacity: 0; /* Départ totalement transparent */
         pointer-events: none;
     }
+    25% {
+        opacity: .2;
+    }
+    50% {
+        opacity: .5;
+    }
+    75% {
+        opacity: .7;
+    }
     100% {
-        opacity: 1;  
+        opacity: 1; /* Arrivée totalement opaque */ 
     }
 }
 
 /* Animation de disparition */
 @keyframes fadeOut {
-    0% {
+    from {
         opacity: 1;
     }
-    100% {
+    to {
         opacity: 0;
         visibility: hidden;
     }
@@ -22,10 +31,10 @@
 
 /* Animation du spinner */
 @keyframes spin {
-    0% {
+    from {
         transform: rotate(0deg);
     }
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }
