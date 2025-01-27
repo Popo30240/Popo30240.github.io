@@ -14,7 +14,6 @@
     & p {
         padding:10px 10px 30px 10px;
     }
-
 }
 
 .section__functioning {
@@ -29,13 +28,25 @@
     & ol {
         list-style: none;
     }
+    @media (min-width: 1024px) {
+        & ol {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        & li {
+            width: 335px;
+            height: 72.38px;
+        }
+    /* Styles adaptés aux desktops */
+    }
 }
 
 .circleNumber {
     display: flex;
     justify-content: center;
     align-items: center;
-    position:absolute;
+    position: absolute;
     left: -5%;
     background-color: $primary-color;
     width: 24px;
@@ -60,4 +71,11 @@
     gap: 2em;
     justify-items: center;
     padding-top: 20px;
+    /* Screen >= 1024px */
+    @media (min-width: 1024px) {
+        & {
+            grid-template-columns: 1fr 1fr;
+        }
+        /* Styles adaptés aux desktops */
+    }
 }

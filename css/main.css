@@ -25,6 +25,14 @@ main h1, h2 {
 h2 {
   padding-left: 10px;
 }
+@media (min-width: 768px) {
+  h2 {
+    /* Styles adaptés aux tablettes, etc. */
+  }
+  h2 {
+    padding-left: 105px;
+  }
+}
 
 /* On cache toutes les checkboxs et leurs espaces */
 input[type=checkbox] {
@@ -194,6 +202,15 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   border-radius: 15px;
   position: relative;
 }
+@media (min-width: 768px) {
+  .card {
+    /* Styles adaptés aux tablettes, etc. */
+  }
+  .card {
+    height: 251px;
+    width: 490px;
+  }
+}
 .card__contenairNew {
   display: flex;
   align-items: center;
@@ -205,6 +222,15 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   position: absolute;
   top: 10px;
   left: 250px;
+}
+@media (min-width: 768px) {
+  .card__contenairNew {
+    /* Styles adaptés aux tablettes, etc. */
+  }
+  .card__contenairNew {
+    top: 45px;
+    left: 390px;
+  }
 }
 .card__contenairNew p {
   opacity: 50%;
@@ -227,7 +253,7 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
 .card__containerTextIcone {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 15px;
   align-items: center;
 }
 
@@ -250,6 +276,22 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
 }
 .footer li {
   list-style-type: none;
+}
+@media (min-width: 768px) {
+  .footer {
+    /* Styles adaptés aux tablettes, etc. */
+  }
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+  }
+  .footer h4 {
+    padding: 0 50px 0 0;
+  }
+  .footer ul {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .navbar__title p {
@@ -282,6 +324,20 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
 .functioning__link ol {
   list-style: none;
 }
+@media (min-width: 1024px) {
+  .functioning__link {
+    /* Styles adaptés aux desktops */
+  }
+  .functioning__link ol {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .functioning__link li {
+    width: 335px;
+    height: 72.38px;
+  }
+}
 
 .circleNumber {
   display: flex;
@@ -308,6 +364,15 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   gap: 2em;
   justify-items: center;
   padding-top: 20px;
+  /* Screen >= 1024px */
+}
+@media (min-width: 1024px) {
+  .cardsRestaurants__cards {
+    /* Styles adaptés aux desktops */
+  }
+  .cardsRestaurants__cards {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .backgroundMenu {

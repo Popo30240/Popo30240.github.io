@@ -24,6 +24,12 @@ main h1, h2 {
 
 h2 {
     padding-left: 10px;
+    @media (min-width: 768px) {
+        & {    
+            padding-left: 105px;
+        }
+    /* Styles adaptés aux tablettes, etc. */
+    }
 }
 
 /* On cache toutes les checkboxs et leurs espaces */
