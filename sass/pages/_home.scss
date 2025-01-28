@@ -2,6 +2,19 @@
     font-family: "Shrikhand", serif;
     font-weight: 400;
     font-size: $seize-police-title;
+    @media (min-width: 1024px) {
+        & {
+            font-size: 37px;
+        }
+    }
+}
+
+.mainHome h2 {
+    @media (min-width: 1024px) {
+        & {
+            padding-left: 110px;
+        }
+    }
 }
 
 .section__restaurantSelection {
@@ -11,6 +24,11 @@
     text-align: center;
     background-color: $grey-light-color;
     padding:30px 0 60px 0px;
+    @media (min-width: 1024px) {
+        & h1 {
+            font-size: 40px;
+        }
+    }
     & p {
         padding:10px 10px 30px 10px;
     }
