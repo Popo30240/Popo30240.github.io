@@ -5,21 +5,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>OhMyFood</title>
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!-- police roboto -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- Importation des polices Google optimisée -->
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
-        <!-- police raleway -->
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap" rel="stylesheet">
-        <!-- importation d'icône -->
+
+        <!-- Importation d'icônes -->
         <script src="https://kit.fontawesome.com/8e472dab1d.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
             integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <link rel="stylesheet" href="./css/main.css">
     </head>
 
@@ -62,6 +60,8 @@
                                 id="town"
                                 name="town"
                                 placeholder="Paris, Belleville"
+                                required
+                                aria-label="Rechercher une ville"
                             />
                         </form>
 
@@ -118,57 +118,33 @@
                     <div class="cardsRestaurants__cards">
 
                         <article class="card">
-                            <a href="menu1.html">
-                                <div class="card__contenairNew"><p>Nouveau</p></div>
-                                <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Image montrant un plat gastronomique">
-                                <div class="card__containerTextIcone">
-                                    <div class="card__text">
-                                        <h3 class="card__title">La palette du goût</h3>
-                                        <p class="card__subtitle">Ménilmontant</p>
-                                    </div>
-                                    <div class="card__icone">
-                                        <!-- toggle1 = le coeur numéro 1 -->
-                                        <input type="checkbox" id="toggle1">
-                                        <label for="toggle1">
-                                            <div class="containerHeart">
-
+                          <a href="menu1.html">
+                              <div class="card__contenairNew"><p>Nouveau</p></div>
+                              <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Plat gastronomique au restaurant La palette du goût">
+                              <div class="card__containerTextIcone">
+                                  <div class="card__text">
+                                      <h3 class="card__title">La palette du goût</h3>
+                                      <p class="card__subtitle">Ménilmontant</p>
+                                  </div>
+                                  <div class="card__icone">
+                                      <input type="checkbox" id="toggle1">
+                                      <label for="toggle1">
+                                          <div class="containerHeart">
                                               <svg width="100%" viewBox="0 0 24 24">
-                                          
-                                                <defs>
-                                                  <!-- ClipPath en forme de coeur -->
-                                                  <clipPath id="heartClip">
-                                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                                  </clipPath>
-                                                </defs>
-                                          
-                                                <!--
-                                                  Rectangle qui sera "découpé" par la forme du coeur (clip-path).
-                                                  Il fait la taille du SVG (24x24).
-                                                  Il est coloré en rouge.
-                                                  Il se déplace de bas en haut via l'animation.
-                                                -->
-                                                <rect 
-                                                  class="containerHeart__fillRect "
-                                                  x="0" y="0"
-                                                  width="24" height="24"
-                                                  fill=url(#gradient-horizontal)
-                                                  clip-path="url(#heartClip)"
-                                                />
-                                          
-                                                <!-- Optionnel : contour du coeur pour repère visuel -->
-                                                <path 
-                                                  class="containerHeart__heartOutline"
-                                                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                                />
+                                                  <defs>
+                                                      <!-- ClipPath en forme de coeur -->
+                                                      <clipPath id="heartClip">
+                                                          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                                      </clipPath>
+                                                  </defs>
+                                                  <rect class="containerHeart__fillRect" x="0" y="0" width="24" height="24" fill="url(#gradient-horizontal)" clip-path="url(#heartClip)" />
+                                                  <path class="containerHeart__heartOutline" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                                               </svg>
-
-                                            </div>
-
-                                        </label>
-
-                                    </div>
-                                </div>
-                            </a>
+                                          </div>
+                                      </label>
+                                  </div>
+                              </div>
+                          </a>
                         </article>
                         
                         <article class="card">
@@ -184,40 +160,18 @@
                                         <!-- toggle2 = le coeur numéro 2 -->
                                         <input type="checkbox" id="toggle2">
                                         <label for="toggle2">
-                                            <div class="containerHeart">
-
-                                              <svg width="100%" viewBox="0 0 24 24">
-                                          
+                                          <div class="containerHeart">
+                                            <svg width="100%" viewBox="0 0 24 24">
                                                 <defs>
-                                                  <!-- ClipPath en forme de coeur -->
-                                                  <clipPath id="heartClip">
-                                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                                  </clipPath>
+                                                    <!-- ClipPath en forme de coeur -->
+                                                    <clipPath id="heartClip">
+                                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                                    </clipPath>
                                                 </defs>
-                                          
-                                                <!--
-                                                  Rectangle qui sera "découpé" par la forme du coeur (clip-path).
-                                                  Il fait la taille du SVG (24x24).
-                                                  Il est coloré en rouge.
-                                                  Il se déplace de bas en haut via l'animation.
-                                                -->
-                                                <rect 
-                                                  class="containerHeart__fillRect "
-                                                  x="0" y="0"
-                                                  width="24" height="24"
-                                                  fill=url(#gradient-horizontal)
-                                                  clip-path="url(#heartClip)"
-                                                />
-                                          
-                                                <!-- Optionnel : contour du coeur pour repère visuel -->
-                                                <path 
-                                                  class="containerHeart__heartOutline"
-                                                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                                />
-                                              </svg>
-
-                                            </div>
-
+                                                <rect class="containerHeart__fillRect" x="0" y="0" width="24" height="24" fill="url(#gradient-horizontal)" clip-path="url(#heartClip)" />
+                                                <path class="containerHeart__heartOutline" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                            </svg>
+                                          </div>
                                         </label>
 
                                     </div>
@@ -237,40 +191,18 @@
                                         <!-- toggle3 = le coeur numéro 3 -->
                                         <input type="checkbox" id="toggle3">
                                         <label for="toggle3">
-                                            <div class="containerHeart">
-
-                                              <svg width="100%" viewBox="0 0 24 24">
-                                          
+                                          <div class="containerHeart">
+                                            <svg width="100%" viewBox="0 0 24 24">
                                                 <defs>
-                                                  <!-- ClipPath en forme de coeur -->
-                                                  <clipPath id="heartClip">
-                                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                                  </clipPath>
+                                                    <!-- ClipPath en forme de coeur -->
+                                                    <clipPath id="heartClip">
+                                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                                    </clipPath>
                                                 </defs>
-                                          
-                                                <!--
-                                                  Rectangle qui sera "découpé" par la forme du coeur (clip-path).
-                                                  Il fait la taille du SVG (24x24).
-                                                  Il est coloré en rouge.
-                                                  Il se déplace de bas en haut via l'animation.
-                                                -->
-                                                <rect 
-                                                  class="containerHeart__fillRect "
-                                                  x="0" y="0"
-                                                  width="24" height="24"
-                                                  fill=url(#gradient-horizontal)
-                                                  clip-path="url(#heartClip)"
-                                                />
-                                          
-                                                <!-- Optionnel : contour du coeur pour repère visuel -->
-                                                <path 
-                                                  class="containerHeart__heartOutline"
-                                                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                                />
-                                              </svg>
-
-                                            </div>
-
+                                                <rect class="containerHeart__fillRect" x="0" y="0" width="24" height="24" fill="url(#gradient-horizontal)" clip-path="url(#heartClip)" />
+                                                <path class="containerHeart__heartOutline" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                            </svg>
+                                          </div>
                                         </label>
                                     </div>
                                 </div>
@@ -290,39 +222,18 @@
                                         <!-- toggle4 = le coeur numéro 4 -->
                                         <input type="checkbox" id="toggle4">
                                         <label for="toggle4">
-                                            <div class="containerHeart">
-
-                                              <svg width="100%" viewBox="0 0 24 24">
-                                          
+                                          <div class="containerHeart">
+                                            <svg width="100%" viewBox="0 0 24 24">
                                                 <defs>
-                                                  <!-- ClipPath en forme de coeur -->
-                                                  <clipPath id="heartClip">
-                                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                                  </clipPath>
+                                                    <!-- ClipPath en forme de coeur -->
+                                                    <clipPath id="heartClip">
+                                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                                    </clipPath>
                                                 </defs>
-                                          
-                                                <!--
-                                                  Rectangle qui sera "découpé" par la forme du coeur (clip-path).
-                                                  Il fait la taille du SVG (24x24).
-                                                  Il est coloré en rouge.
-                                                  Il se déplace de bas en haut via l'animation.
-                                                -->
-                                                <rect 
-                                                  class="containerHeart__fillRect "
-                                                  x="0" y="0"
-                                                  width="24" height="24"
-                                                  fill=url(#gradient-horizontal)
-                                                  clip-path="url(#heartClip)"
-                                                />
-                                          
-                                                <!-- Optionnel : contour du coeur pour repère visuel -->
-                                                <path 
-                                                  class="containerHeart__heartOutline"
-                                                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                                />
-                                              </svg>
-
-                                            </div>
+                                                <rect class="containerHeart__fillRect" x="0" y="0" width="24" height="24" fill="url(#gradient-horizontal)" clip-path="url(#heartClip)" />
+                                                <path class="containerHeart__heartOutline" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                            </svg>
+                                          </div>
 
                                         </label>
                                     </div>
@@ -338,27 +249,14 @@
             </main>
 
             <footer class="footer">
-
-                <h4>ohmyfood</h4>
-
-                <ul>
-                    <li>
-                        <i class="fa-solid fa-utensils"></i>
-                        <a href="#">Proposer un restaurant</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-handshake-angle"></i>
-                        <a href="#">Devenir partenaire</a>
-                    </li>
-                    <li>
-                        <a href="#">Mentions légales</a>
-                    </li>
-                    <li>
-                        <a href="mailto:anthonymackiw@outlook.fr">Contact</a>
-                    </li>
-                </ul>
-
-            </footer> 
+              <h4>ohmyfood</h4>
+              <ul>
+                  <li><i class="fa-solid fa-utensils"></i><a href="#"> Proposer un restaurant</a></li>
+                  <li><i class="fa-solid fa-handshake-angle"></i><a href="#"> Devenir partenaire</a></li>
+                  <li><a href="#">Mentions légales</a></li>
+                  <li><a href="mailto:anthonymackiw@outlook.fr">Contact</a></li>
+              </ul>
+            </footer>
 
         </div>   
     </body>

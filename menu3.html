@@ -7,15 +7,11 @@
         <title>Menu - À la Française</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!-- police roboto -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- Importation des polices Google optimisée -->
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
-        <!-- police raleway -->
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap" rel="stylesheet">
-        <!-- importation d'icône -->
+
+        <!-- Importation d'icônes -->
         <script src="https://kit.fontawesome.com/8e472dab1d.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
             integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -72,37 +68,16 @@
                             <input type="checkbox" id="toggle5">
                             <label for="toggle5">
                                 <div class="containerHeart">
-
                                     <svg width="100%" viewBox="0 0 24 24">
-                                
-                                    <defs>
-                                        <!-- ClipPath en forme de coeur -->
-                                        <clipPath id="heartClip">
-                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                        </clipPath>
-                                    </defs>
-                                
-                                    <!--
-                                        Rectangle qui sera "découpé" par la forme du coeur (clip-path).
-                                        Il fait la taille du SVG (24x24).
-                                        Il est coloré avec un dégradé de deux couleurs.
-                                        Il se déplace de bas en haut via l'animation.
-                                    -->
-                                    <rect 
-                                        class="containerHeart__fillRect"
-                                        x="0" y="0"
-                                        width="24" height="24"
-                                        fill=url(#gradient-horizontal)
-                                        clip-path="url(#heartClip)"
-                                    />
-                                
-                                    <!-- Optionnel : contour du coeur pour repère visuel -->
-                                    <path 
-                                        class="containerHeart__heartOutline"
-                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                    />
+                                        <defs>
+                                            <!-- ClipPath en forme de coeur -->
+                                            <clipPath id="heartClip">
+                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                            </clipPath>
+                                        </defs>
+                                        <rect class="containerHeart__fillRect" x="0" y="0" width="24" height="24" fill="url(#gradient-horizontal)" clip-path="url(#heartClip)" />
+                                        <path class="containerHeart__heartOutline" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                                     </svg>
-
                                 </div>
 
                             </label>
@@ -110,13 +85,14 @@
 
                     </div>
 
-                    <h2>ENTRÉÉS</h2>
-
-                    <hr class="line">
-
                     <div class="functioning__link menu__Enter">
                         <ol>   
 
+                            <div class="Titlemenu">
+                                <h2>ENTRÉÉS</h2>
+        
+                                <hr class="line">
+                            </div>
                             <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
                                 <div class="menu__description">
                                     <h3>Tartare de poulpe acidulé</h3>
@@ -163,13 +139,14 @@
 
                     </div>
 
-                    <h2>PLATS</h2>
-
-                    <hr class="line">
-
                     <div class="functioning__link menu__Dishes">
                         <ol>   
 
+                            <div class="Titlemenu">
+                                <h2>PLATS</h2>
+        
+                                <hr class="line">
+                            </div>
                             <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
                                 <div class="menu__description">
                                     <h3>Coquilles Saint-Jacques</h3>
@@ -216,13 +193,14 @@
 
                     </div>
 
-                    <h2>DESSERTS</h2>
-
-                    <hr class="line">
-
                     <div class="functioning__link menu__Desserts">
                         <ol>   
 
+                            <div class="Titlemenu">
+                                <h2>DESSERTS</h2>
+        
+                                <hr class="line">
+                            </div>
                             <li class="backgroundRectangle backgroundRectangle--backgroundColorWhite">
                                 <div class="menu__description">
                                     <h3>Pétales de violettes glacées</h3>
@@ -278,27 +256,14 @@
             </main>
 
             <footer class="footer">
-
                 <h4>ohmyfood</h4>
-
                 <ul>
-                    <li>
-                        <i class="fa-solid fa-utensils"></i>
-                        <a href="#">Proposer un restaurant</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-handshake-angle"></i>
-                        <a href="#">Devenir partenaire</a>
-                    </li>
-                    <li>
-                        <a href="#">Mentions légales</a>
-                    </li>
-                    <li>
-                        <a href="mailto:anthonymackiw@outlook.fr">Contact</a>
-                    </li>
+                    <li><i class="fa-solid fa-utensils"></i><a href="#"> Proposer un restaurant</a></li>
+                    <li><i class="fa-solid fa-handshake-angle"></i><a href="#"> Devenir partenaire</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="mailto:anthonymackiw@outlook.fr">Contact</a></li>
                 </ul>
-
-            </footer> 
+            </footer>
 
         </div>   
 
