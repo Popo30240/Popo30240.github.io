@@ -1,19 +1,10 @@
 /* Animation d'apparition */
 @keyframes fadeIn {
-    0% {
+    from {
         opacity: 0; /* Départ totalement transparent */
         pointer-events: none;
     }
-    25% {
-        opacity: .2;
-    }
-    50% {
-        opacity: .5;
-    }
-    75% {
-        opacity: .7;
-    }
-    100% {
+    to {
         opacity: 1; /* Arrivée totalement opaque */ 
     }
 }

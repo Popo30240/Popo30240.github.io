@@ -32,16 +32,7 @@
         width: 100%;
         position: relative;
         z-index: -999;
-        @media (min-width: 768px) {
-            & {    
-                object-fit: cover;
-            }
-        }
-        @media (min-width: 1024px) {
-            & {    
-                object-fit: cover;
-            }
-        }
+        object-fit: cover;
     }
     & div:nth-child(1) {
         margin-left: 10px;
@@ -152,7 +143,7 @@
     &:not(:active) {
         .menu__description h3, 
         .menu__description p {
-            width: 220px;
+            width: 250px;
             white-space: nowrap;            /* empêche le retour à la ligne */
             overflow: hidden;               /* masque le texte qui déborde */
             text-overflow: ellipsis;        /* tronque le texte avec "..." */
