@@ -1,32 +1,13 @@
-.backgroundMenu {
-    display: flex;
-    justify-content: center;
-}
-
-.menuTitle { 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    @media (min-width: 1024px) {
-        & {
-            justify-content: center;
-        }
-    }
-
-    & h1 {
-        font-family: Shrikhand;
-        font-size: 28px;
-        font-weight: 400;
-        @media (min-width: 1024px) {
-            & {
-                padding-right: 30px;
-            }
-        }
-    }
-}
-
 .headernavbarMenu {
+    & div:nth-child(1) {
+        position: absolute;
+        margin-left: 20px;
+    }
+    & div:nth-child(2) {
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
     & img {
         height: 257px;
         width: 100%;
@@ -34,23 +15,27 @@
         z-index: -999;
         object-fit: cover;
     }
-    & div:nth-child(1) {
-        margin-left: 10px;
-    }
-    & div:nth-child(2) {
-        margin: 0 auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
+}
+
+.backgroundMenu {
+    display: flex;
+    justify-content: center;
 }
 
 .menu {
     background-color: $grey-light-color;
     width: 1024px;
     border-radius: 25px 25px 0 0;
-    padding: 30px 0 30px 0;
+    padding: 40px 0 30px 0;
     margin-top: -25px;
+    &__cardTitle {
+        padding-top: 30px;
+        margin-left: 10px;
+    }
     @media (min-width: 1024px) {
+        &__cardTitle {
+            margin-left: 180px;
+        }
         & ol {    
             flex-direction: column;
         }
@@ -67,25 +52,24 @@
         opacity: 0; /* état initial transparent */
         animation-name: fadeIn;
         animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
-        animation-delay: 3s; /* Le délai qui doit se passer avant l'état final */  
+        animation-delay: 2s; /* Le délai qui doit se passer avant l'état final */  
         animation-duration: 1s; 
     }
     &__Dishes ol {
         opacity: 0; /* état initial transparent */
         animation-name: fadeIn;
         animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
-        animation-delay: 8s; /* Le délai qui doit se passer avant l'état final */  
+        animation-delay: 4s; /* Le délai qui doit se passer avant l'état final */  
         animation-duration: 1s; 
     }
     &__Desserts ol {
         opacity: 0; /* état initial transparent */
         animation-name: fadeIn;
         animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
-        animation-delay: 13s; /* Le délai qui doit se passer avant l'état final */  
+        animation-delay: 6s; /* Le délai qui doit se passer avant l'état final */  
         animation-duration: 1s; 
     }
     & h2 {
-        padding-top: 30px;
         font-family: Roboto;
         font-size: 16px;
         font-weight: 300;
@@ -126,6 +110,29 @@
         padding: 20px 10px 0 0;
 
         margin-left: auto;
+    }
+}
+
+.menuTitle { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    @media (min-width: 1024px) {
+        & {
+            justify-content: center;
+        }
+    }
+
+    & h1 {
+        font-family: Shrikhand;
+        font-size: 28px;
+        font-weight: 400;
+        @media (min-width: 1024px) {
+            & {
+                padding-right: 30px;
+            }
+        }
     }
 }
 
@@ -200,7 +207,7 @@
     height: 3px; /* Épaisseur de la ligne */
     width: 40px; /* Largeur de la ligne*/
     background-color: $tertiary-color; /* Couleur de la ligne */
-    margin: 5px 10px; /* Marges autour de la ligne */
+    margin: 5px 15px; /* Marges autour de la ligne */
 }
 
 .orderButton {

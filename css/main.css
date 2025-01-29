@@ -11,7 +11,7 @@ main h1, h2 {
 }
 
 h2 {
-  padding-left: 10px;
+  padding-left: 15px;
 }
 
 /* On cache toutes les checkboxs et leurs espaces */
@@ -106,11 +106,12 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   justify-content: center;
   background-color: #e8e8e8;
   box-shadow: 0px 3px 3px #ccc, inset 0px 2px 2px #ccc;
-  padding: 10px 0 10px 0;
+  padding: 15px 0 15px 0;
 }
 @media (min-width: 1024px) {
   .navbar__location {
     box-shadow: none;
+    padding: 15px 0 15px 0;
   }
 }
 .navbar__location i {
@@ -128,11 +129,12 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
 
 .navbarMenu {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
 }
 .navbarMenu i {
   color: black;
+  font-size: 20px;
 }
 
 .cta1 {
@@ -158,7 +160,7 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   width: 280px;
   height: 65px;
   padding: 5px 20px 5px 20px;
-  margin: 15px;
+  margin: 20px;
   filter: drop-shadow(1px 5px 7px rgba(0, 0, 0, 0.2));
 }
 .backgroundRectangle--backgroundColorGreyLight {
@@ -282,17 +284,21 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
 .navbar__title p {
   font-family: "Shrikhand", serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 30px;
 }
 @media (min-width: 1024px) {
   .navbar__title p {
     font-size: 37px;
+    padding: 20px 0 20px 0;
   }
 }
 
+.mainHome h2 {
+  padding-bottom: 10px;
+}
 @media (min-width: 1024px) {
   .mainHome h2 {
-    padding-left: 110px;
+    padding: 0 0 5px 100px;
   }
 }
 
@@ -305,8 +311,12 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   padding: 30px 0 60px 0px;
 }
 @media (min-width: 1024px) {
+  .section__restaurantSelection {
+    padding: 30px 0 30px 0px;
+  }
   .section__restaurantSelection h1 {
     font-size: 40px;
+    padding-bottom: 15px;
   }
 }
 .section__restaurantSelection p {
@@ -315,7 +325,7 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
 
 .section__functioning {
   background-color: white;
-  padding: 30px 0px 30px 0px;
+  padding: 45px 0px 35px 0px;
 }
 
 .functioning__link {
@@ -359,6 +369,14 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   background-color: #F2F2F2;
   padding: 50px 0 70px 0;
 }
+@media (min-width: 1024px) {
+  .section__cardsRestaurants {
+    /* Styles adaptés aux desktops */
+  }
+  .section__cardsRestaurants {
+    padding: 20px 0 30px 0;
+  }
+}
 
 .cardsRestaurants__cards {
   display: grid;
@@ -376,33 +394,15 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   }
 }
 
-.backgroundMenu {
-  display: flex;
-  justify-content: center;
+.headernavbarMenu div:nth-child(1) {
+  position: absolute;
+  margin-left: 20px;
 }
-
-.menuTitle {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+.headernavbarMenu div:nth-child(2) {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-@media (min-width: 1024px) {
-  .menuTitle {
-    justify-content: center;
-  }
-}
-.menuTitle h1 {
-  font-family: Shrikhand;
-  font-size: 28px;
-  font-weight: 400;
-}
-@media (min-width: 1024px) {
-  .menuTitle h1 {
-    padding-right: 30px;
-  }
-}
-
 .headernavbarMenu img {
   height: 257px;
   width: 100%;
@@ -410,23 +410,27 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   z-index: -999;
   object-fit: cover;
 }
-.headernavbarMenu div:nth-child(1) {
-  margin-left: 10px;
-}
-.headernavbarMenu div:nth-child(2) {
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+
+.backgroundMenu {
+  display: flex;
+  justify-content: center;
 }
 
 .menu {
   background-color: #F2F2F2;
   width: 1024px;
   border-radius: 25px 25px 0 0;
-  padding: 30px 0 30px 0;
+  padding: 40px 0 30px 0;
   margin-top: -25px;
 }
+.menu__cardTitle {
+  padding-top: 30px;
+  margin-left: 10px;
+}
 @media (min-width: 1024px) {
+  .menu__cardTitle {
+    margin-left: 180px;
+  }
   .menu ol {
     flex-direction: column;
   }
@@ -441,25 +445,24 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   opacity: 0; /* état initial transparent */
   animation-name: fadeIn;
   animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
-  animation-delay: 3s; /* Le délai qui doit se passer avant l'état final */
+  animation-delay: 2s; /* Le délai qui doit se passer avant l'état final */
   animation-duration: 1s;
 }
 .menu__Dishes ol {
   opacity: 0; /* état initial transparent */
   animation-name: fadeIn;
   animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
-  animation-delay: 8s; /* Le délai qui doit se passer avant l'état final */
+  animation-delay: 4s; /* Le délai qui doit se passer avant l'état final */
   animation-duration: 1s;
 }
 .menu__Desserts ol {
   opacity: 0; /* état initial transparent */
   animation-name: fadeIn;
   animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
-  animation-delay: 13s; /* Le délai qui doit se passer avant l'état final */
+  animation-delay: 6s; /* Le délai qui doit se passer avant l'état final */
   animation-duration: 1s;
 }
 .menu h2 {
-  padding-top: 30px;
   font-family: Roboto;
   font-size: 16px;
   font-weight: 300;
@@ -493,6 +496,28 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   font-weight: 700;
   padding: 20px 10px 0 0;
   margin-left: auto;
+}
+
+.menuTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (min-width: 1024px) {
+  .menuTitle {
+    justify-content: center;
+  }
+}
+.menuTitle h1 {
+  font-family: Shrikhand;
+  font-size: 28px;
+  font-weight: 400;
+}
+@media (min-width: 1024px) {
+  .menuTitle h1 {
+    padding-right: 30px;
+  }
 }
 
 .backgroundRectangle--backgroundColorWhite {
@@ -556,7 +581,7 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
   height: 3px; /* Épaisseur de la ligne */
   width: 40px; /* Largeur de la ligne*/
   background-color: #99E2D0; /* Couleur de la ligne */
-  margin: 5px 10px; /* Marges autour de la ligne */
+  margin: 5px 15px; /* Marges autour de la ligne */
 }
 
 .orderButton {
