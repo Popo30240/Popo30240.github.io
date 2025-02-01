@@ -23,15 +23,6 @@
 
     <body class="loaded">
 
-        <!-- On crée un gradient de deux couleurs en SVG  -->
-         
-        <svg aria-hidden="true" focusable="false" style="width:0;height:0;position:absolute;">
-            <linearGradient id="gradient-horizontal" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stop-color="#9356DC" />
-              <stop offset="100%" stop-color="#FF79DA" />
-            </linearGradient>
-        </svg>
-
         <!-- Loader -->
         <div id="loader">
             <div class="spinner"></div>
@@ -118,127 +109,70 @@
                     <div class="cardsRestaurants__cards">
 
                         <article class="card">
-                          <a href="menu1.html">
-                              <div class="card__contenairNew"><p>Nouveau</p></div>
-                              <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Plat gastronomique au restaurant La palette du goût">
-                              <div class="card__containerTextIcone">
-                                  <div class="card__text">
-                                      <h3 class="card__title">La palette du goût</h3>
-                                      <p class="card__subtitle">Ménilmontant</p>
-                                  </div>
-                                  <div class="card__icone">
-                                      <input type="checkbox" id="toggle1">
-                                      <label for="toggle1">
-                                          <div class="containerHeart">
-                                              <svg width="100%" viewBox="0 0 24 24">
-                                                  <defs>
-                                                      <!-- ClipPath en forme de coeur -->
-                                                      <clipPath id="heartClip">
-                                                          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                                      </clipPath>
-                                                  </defs>
-                                                  <rect class="containerHeart__fillRect" x="0" y="0" width="24" height="24" fill="url(#gradient-horizontal)" clip-path="url(#heartClip)" />
-                                                  <path class="containerHeart__heartOutline" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                              </svg>
-                                          </div>
-                                      </label>
-                                  </div>
-                              </div>
-                          </a>
+                                <a href="menu1.html">
+                                    <div class="card__contenairNew"><p>Nouveau</p></div>
+                                    <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Plat gastronomique au restaurant La palette du goût">
+                                    <div class="card__containerTextIcone">
+                                        <div class="card__text">
+                                            <h3 class="card__title">La palette du goût</h3>
+                                            <p class="card__subtitle">Ménilmontant</p>
+                                        </div>
+                                        <div class="card__icone">
+                                            <i class="fa-solid fa-heart"></i> 
+                                            <i class="fa-regular fa-heart"></i>
+                                        </div>
+                                    </div>
+                                </a>
                         </article>
                         
                         <article class="card">
-                            <a href="menu2.html">
-                                <div class="card__contenairNew"><p>Nouveau</p></div>
-                                <img src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Image montrant un plat gastronomique">
-                                <div class="card__containerTextIcone">
-                                    <div class="card__text">
-                                        <h3 class="card__title">La note enchantée</h3>
-                                        <p class="card__subtitle">Charonne</p>
+                                <a href="menu2.html">
+                                    <div class="card__contenairNew"><p>Nouveau</p></div>
+                                    <img src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Image montrant un plat gastronomique">
+                                    <div class="card__containerTextIcone">
+                                        <div class="card__text">
+                                            <h3 class="card__title">La note enchantée</h3>
+                                            <p class="card__subtitle">Charonne</p>
+                                        </div>
+                                        <div class="card__icone">
+                                            <i class="fa-solid fa-heart"></i> 
+                                            <i class="fa-regular fa-heart"></i>
+                                        </div>
                                     </div>
-                                    <div class="card__icone">
-                                        <!-- toggle2 = le coeur numéro 2 -->
-                                        <input type="checkbox" id="toggle2">
-                                        <label for="toggle2">
-                                          <div class="containerHeart">
-                                            <svg width="100%" viewBox="0 0 24 24">
-                                                <defs>
-                                                    <!-- ClipPath en forme de coeur -->
-                                                    <clipPath id="heartClip">
-                                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                                    </clipPath>
-                                                </defs>
-                                                <rect class="containerHeart__fillRect" x="0" y="0" width="24" height="24" fill="url(#gradient-horizontal)" clip-path="url(#heartClip)" />
-                                                <path class="containerHeart__heartOutline" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                            </svg>
-                                          </div>
-                                        </label>
-
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
                         </article>
                                     
                         <article class="card">
-                            <a href="menu3.html">
-                                <img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Image montrant un plat gastronomique">
-                                <div class="card__containerTextIcone">
-                                    <div class="card__text">
-                                        <h3 class="card__title">À la Française</h3>
-                                        <p class="card__subtitle">Cité Rouge</p>
+                                <a href="menu3.html">
+                                    <img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Image montrant un plat gastronomique">
+                                    <div class="card__containerTextIcone">
+                                        <div class="card__text">
+                                            <h3 class="card__title">À la Française</h3>
+                                            <p class="card__subtitle">Cité Rouge</p>
+                                        </div>
+                                        <div class="card__icone">
+                                            <i class="fa-solid fa-heart"></i> 
+                                            <i class="fa-regular fa-heart"></i>
+                                        </div>
                                     </div>
-                                    <div class="card__icone">
-                                        <!-- toggle3 = le coeur numéro 3 -->
-                                        <input type="checkbox" id="toggle3">
-                                        <label for="toggle3">
-                                          <div class="containerHeart">
-                                            <svg width="100%" viewBox="0 0 24 24">
-                                                <defs>
-                                                    <!-- ClipPath en forme de coeur -->
-                                                    <clipPath id="heartClip">
-                                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                                    </clipPath>
-                                                </defs>
-                                                <rect class="containerHeart__fillRect" x="0" y="0" width="24" height="24" fill="url(#gradient-horizontal)" clip-path="url(#heartClip)" />
-                                                <path class="containerHeart__heartOutline" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                            </svg>
-                                          </div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
                         </article>               
 
                         
                         <article class="card">
-                            <a href="menu4.html">
-                                <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Image montrant un plat gastronomique">
-                                <div class="card__containerTextIcone">
-                                    <div class="card__text">
-                                        <h3 class="card__title">Le délice des sens</h3>
-                                        <p class="cards__subtitle">Folie-Méricourt</p>
+                                <a href="menu4.html">
+                                    <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Image montrant un plat gastronomique">
+                                    <div class="card__containerTextIcone">
+                                        <div class="card__text">
+                                            <h3 class="card__title">Le délice des sens</h3>
+                                            <p class="cards__subtitle">Folie-Méricourt</p>
+                                        </div>
+                                        <div class="card__icone">
+                                            <i class="fa-solid fa-heart"></i> 
+                                            <i class="fa-regular fa-heart"></i>
+                                        </div>
                                     </div>
-                                    <div class="card__icone">
-                                        <!-- toggle4 = le coeur numéro 4 -->
-                                        <input type="checkbox" id="toggle4">
-                                        <label for="toggle4">
-                                          <div class="containerHeart">
-                                            <svg width="100%" viewBox="0 0 24 24">
-                                                <defs>
-                                                    <!-- ClipPath en forme de coeur -->
-                                                    <clipPath id="heartClip">
-                                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                                    </clipPath>
-                                                </defs>
-                                                <rect class="containerHeart__fillRect" x="0" y="0" width="24" height="24" fill="url(#gradient-horizontal)" clip-path="url(#heartClip)" />
-                                                <path class="containerHeart__heartOutline" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                            </svg>
-                                          </div>
-
-                                        </label>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
                         </article>
                         
 

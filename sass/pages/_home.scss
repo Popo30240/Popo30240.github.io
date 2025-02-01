@@ -109,3 +109,31 @@
         /* Styles adaptés aux desktops */
     }
 }
+
+.card__icone {
+    cursor: pointer; /* pour signaler qu’on peut cliquer */
+    & i:nth-child(1) {
+        font-size: 24px;
+        background: linear-gradient($primary-color,$secondary-color);
+        background-clip: text; /*pour appliquer le dégradé uniquement au texte */
+        -webkit-text-fill-color: transparent; /* pour cacher la couleur par défaut du texte*/
+        position: relative;
+        top: 50%;
+        left: 55%;
+        opacity: 0; /* état initial transparent */
+    }
+    & i:nth-child(2) {
+        position: relative;
+        font-size: 24px;
+    }
+    &:hover { /* Si le cœur n'est cliqué pas alors il est caché */
+        & i:nth-child(1) {
+            animation-name: fadeIn;
+            animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
+            animation-duration: 2s; 
+        }
+        & i:nth-child(2) {
+            -webkit-text-fill-color: transparent; /* pour cacher la couleur par défaut du texte*/
+        }
+    }
+}
