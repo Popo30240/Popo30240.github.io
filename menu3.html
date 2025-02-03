@@ -21,14 +21,6 @@
 
     <body class="loaded">
 
-        <!-- On crée un gradient de deux couleurs en SVG  -->
-        <svg aria-hidden="true" focusable="false" style="width:0;height:0;position:absolute;">
-            <linearGradient id="gradient-horizontal" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stop-color="#9356DC" />
-              <stop offset="100%" stop-color="#FF79DA" />
-            </linearGradient>
-        </svg>
-
         <!-- Loader -->
         <div id="loader">
             <div class="spinner"></div>
@@ -64,23 +56,8 @@
                         <h1>À la Française</h1>
 
                         <div class="card__icone">
-                            <!-- toggle5 = le coeur numéro 5 -->
-                            <input type="checkbox" id="toggle5">
-                            <label for="toggle5">
-                                <div class="containerHeart">
-                                    <svg width="100%" viewBox="0 0 24 24">
-                                        <defs>
-                                            <!-- ClipPath en forme de coeur -->
-                                            <clipPath id="heartClip">
-                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                            </clipPath>
-                                        </defs>
-                                        <rect class="containerHeart__fillRect" x="0" y="0" width="24" height="24" fill="url(#gradient-horizontal)" clip-path="url(#heartClip)" />
-                                        <path class="containerHeart__heartOutline" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                    </svg>
-                                </div>
-
-                            </label>
+                            <i class="fa-solid fa-heart"></i> 
+                            <i class="fa-regular fa-heart"></i>
                         </div>
 
                     </div>

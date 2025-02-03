@@ -58,42 +58,6 @@ input[type=checkbox] {
   display: block;
 }
 
-/********** method 1 **********/
-/* 1. On masque la checkbox qui sert de déclencheur */
-/* 2. Conteneur pour centrer ou styler l'exemple (optionnel) */
-.containerHeart {
-  cursor: pointer; /* pour signaler qu’on peut cliquer */
-}
-.containerHeart__fillRect {
-  /* 3. Par défaut, le cœur est réduit de façon à ne pas le voir.
-  On utilise un transform avec sa valeur translateX (axe Horizontal) translateY (axe Vertical) pour centré le cœur dans l'état "non coché". */
-  transform: scale(0.01);
-  transform-origin: center;
-  transition: transform 1000ms ease-in;
-}
-.containerHeart__heartOutline {
-  /* On dessine un contour du coeur pour visualiser la forme (optionnel) */
-  fill: none;
-  stroke: black;
-  stroke-width: 1;
-}
-
-input[type=checkbox]:checked + label svg .containerHeart__fillRect {
-  /* 4. Quand la checkbox est cochée, on lance l’animation du cœur qui grossit jusqu'à prendre sa taille initial.
-  Donnant un effet de remplissage en (1s).*/
-  transition: 1000ms ease-out;
-  transform: scale(1);
-}
-
-/********** method 2 **********/
-/* 1. Animation pour faire "remonter" le rectangle (remplissage) */
-/* 2. On masque la checkbox qui sert de déclencheur */
-/* 3. Conteneur pour centrer ou styler l'exemple (optionnel) */
-/* 4. Par défaut, le rectangle est placé en bas (hors du coeur).
-        On utilise un transform direct pour l'état "non coché". */
-/* 5. Quand la checkbox est cochée, on lance l’animation 
-        de remplissage (3s). Le "forwards" garde l’état final. */
-/* On dessine un contour du coeur pour visualiser la forme (optionnel) */
 .navbar {
   display: flex;
   flex-direction: column;
@@ -595,12 +559,12 @@ input[type=checkbox]:checked + label svg .containerHeart__fillRect {
 .backgroundRectangle--backgroundColorWhite:active .menu__price {
   /* On déplace l'élément sur son point initial*/
   transform: translateX(0%);
-  transition: transform 1000ms ease-out;
+  transition: transform 250ms ease-out;
 }
 .backgroundRectangle--backgroundColorWhite:active .menu__checkAnimation {
   /* On déplace l'élément sur son point initial*/
   transform: translateX(0%);
-  transition: transform 1000ms ease-out;
+  transition: transform 250ms ease-out;
 }
 
 .line {

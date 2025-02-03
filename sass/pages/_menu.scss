@@ -190,13 +190,13 @@
         .menu__price {
             /* On déplace l'élément sur son point initial*/
             transform: translateX(0%);
-            transition: transform 1000ms ease-out;
+            transition: transform 250ms ease-out;
         }
 
         .menu__checkAnimation {
             /* On déplace l'élément sur son point initial*/
             transform: translateX(0%);
-            transition: transform 1000ms ease-out;
+            transition: transform 250ms ease-out;
         }
 
     }
