@@ -121,16 +121,17 @@
         top: 50%;
         left: 55%;
         opacity: 0; /* état initial transparent */
+        transform: scale(0.01); /* taille initial */
     }
     & i:nth-child(2) {
         position: relative;
         font-size: 24px;
     }
-    &:hover { /* Si le cœur n'est cliqué pas alors il est caché */
+    &:hover { /* Si le cœur n'est pas survolé alors il est caché */
         & i:nth-child(1) {
-            animation-name: fadeIn;
-            animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
-            animation-duration: 2s; 
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
         & i:nth-child(2) {
             -webkit-text-fill-color: transparent; /* pour cacher la couleur par défaut du texte*/
