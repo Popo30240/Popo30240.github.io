@@ -14,7 +14,7 @@
     padding-bottom: 10px;
     @media (min-width: 1024px) {
         & {
-            padding: 0 0 5px 100px;
+            padding: 0 0 5px 180px;
         }
     }
 }
@@ -59,7 +59,7 @@
             justify-content: center;
         }
         & li {
-            width: 335px;
+            // width: 335px;
             height: 72.38px;
         }
     /* Styles adaptés aux desktops */
@@ -97,17 +97,12 @@
 }
 
 .cardsRestaurants__cards {
-    display: grid;
-    gap: 2em;
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 3em;
+    column-gap: 6em;
+    justify-content: center;
     padding-top: 20px;
-    /* Screen >= 1024px */
-    @media (min-width: 1024px) {
-        & {
-            grid-template-columns: 1fr 1fr;
-        }
-        /* Styles adaptés aux desktops */
-    }
 }
 
 .card__icone {

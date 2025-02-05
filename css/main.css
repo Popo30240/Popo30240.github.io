@@ -257,7 +257,7 @@ input[type=checkbox] {
 }
 @media (min-width: 1024px) {
   .mainHome h2 {
-    padding: 0 0 5px 100px;
+    padding: 0 0 5px 180px;
   }
 }
 
@@ -304,7 +304,6 @@ input[type=checkbox] {
     justify-content: center;
   }
   .functioning__link li {
-    width: 335px;
     height: 72.38px;
   }
 }
@@ -338,19 +337,12 @@ input[type=checkbox] {
 }
 
 .cardsRestaurants__cards {
-  display: grid;
-  gap: 2em;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 3em;
+  column-gap: 6em;
+  justify-content: center;
   padding-top: 20px;
-  /* Screen >= 1024px */
-}
-@media (min-width: 1024px) {
-  .cardsRestaurants__cards {
-    /* Styles adaptés aux desktops */
-  }
-  .cardsRestaurants__cards {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .card__icone {
