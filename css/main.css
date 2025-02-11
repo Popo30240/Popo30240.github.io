@@ -282,6 +282,14 @@ input[type=checkbox] {
   padding: 10px 10px 30px 10px;
 }
 
+.responsiveMax1440 {
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+
 .section__functioning {
   background-color: white;
   padding: 45px 0px 35px 0px;
@@ -358,6 +366,7 @@ input[type=checkbox] {
   left: 55%;
   opacity: 0; /* état initial transparent */
   transform: scale(0.01); /* taille initial */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 .card__icone i:nth-child(2) {
   position: relative;
@@ -367,7 +376,6 @@ input[type=checkbox] {
 .card__icone:hover i:nth-child(1) {
   opacity: 1;
   transform: scale(1);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 .card__icone:hover i:nth-child(2) {
   -webkit-text-fill-color: transparent; /* pour cacher la couleur par défaut du texte*/
