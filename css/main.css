@@ -1,5 +1,6 @@
 @charset "UTF-8";
 * {
+  box-sizing: border-box;
   margin: 0px;
   padding: 0px;
   font-family: "Roboto", sans-serif;
@@ -121,7 +122,7 @@ input[type=checkbox] {
   display: flex;
   align-items: center;
   border-radius: 20px 20px;
-  width: 280px;
+  min-width: 280px;
   height: 65px;
   padding: 5px 20px 5px 20px;
   margin: 20px;
@@ -292,13 +293,9 @@ input[type=checkbox] {
 
 .section__functioning {
   background-color: white;
-  padding: 45px 0px 35px 0px;
+  padding: 45px 10px 35px 10px;
 }
 
-.functioning__link {
-  display: flex;
-  justify-content: center;
-}
 .functioning__link ol {
   list-style: none;
 }
@@ -308,10 +305,10 @@ input[type=checkbox] {
   }
   .functioning__link ol {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
   }
   .functioning__link li {
+    width: 323px;
     height: 72.38px;
   }
 }
@@ -320,12 +317,17 @@ input[type=checkbox] {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  left: -5%;
+  position: fixed;
+  left: -2%;
   background-color: #9356DC;
   width: 24px;
   height: 24px;
   border-radius: 50%;
+}
+@media (min-width: 1024px) {
+  .circleNumber {
+    left: -6%;
+  }
 }
 .circleNumber p {
   color: white;
