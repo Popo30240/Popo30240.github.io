@@ -412,6 +412,11 @@ input[type=checkbox] {
   object-fit: cover;
 }
 
+.mainMenu {
+  display: flex;
+  justify-content: center;
+}
+
 .backgroundMenu {
   display: flex;
   justify-content: center;
@@ -436,10 +441,14 @@ input[type=checkbox] {
     flex-direction: column;
   }
 }
-@media (min-width: 768px) {
+.menu .functioning__link li {
+  min-width: 349px;
+  height: 69px;
+}
+@media (min-width: 1024px) {
   .menu .functioning__link li {
+    max-width: 634px;
     width: 634px;
-    height: 69px;
   }
 }
 .menu__Enter ol {
@@ -523,8 +532,6 @@ input[type=checkbox] {
 }
 
 .backgroundRectangle--backgroundColorWhite {
-  width: 349px;
-  height: 69px;
   padding: 0;
   /* Permet à l'élément CheckAnimation d'être caché quant il est en-dehors*/
   overflow: hidden;

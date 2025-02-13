@@ -17,6 +17,11 @@
     }
 }
 
+.mainMenu {
+    display: flex;
+    justify-content: center;
+}
+
 .backgroundMenu {
     display: flex;
     justify-content: center;
@@ -41,10 +46,12 @@
         }
     }
     & .functioning__link li {
-        @media (min-width: 768px) {
+        min-width: 349px;
+        height: 69px;
+        @media (min-width: 1024px) {
             & {    
+                max-width: 634px;
                 width: 634px;
-                height: 69px;
             }
         }
     }
@@ -138,9 +145,6 @@
 }
 
 .backgroundRectangle--backgroundColorWhite {
-
-    width: 349px;
-    height: 69px;
 
     padding: 0;
 
