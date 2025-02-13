@@ -23,23 +23,29 @@
 }
 
 .backgroundMenu {
-    display: flex;
-    justify-content: center;
+    @media (min-width: 1024px) {
+        & {
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
 
 .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: $grey-light-color;
-    width: 1024px;
-    border-radius: 25px 25px 0 0;
     padding: 40px 0 30px 0;
     margin-top: -25px;
+    min-width: 375px;
     &__cardTitle {
         padding-top: 30px;
-        margin-left: 10px;
     }
     @media (min-width: 1024px) {
-        &__cardTitle {
-            margin-left: 180px;
+        & {
+            width: 1024px;
+            border-radius: 25px 25px 0 0;
         }
         & ol {    
             flex-direction: column;
@@ -48,7 +54,7 @@
     & .functioning__link li {
         min-width: 349px;
         height: 69px;
-        @media (min-width: 1024px) {
+        @media (min-width: 768px) {
             & {    
                 max-width: 634px;
                 width: 634px;
@@ -56,6 +62,10 @@
         }
     }
     &__Enter ol {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
         opacity: 0; /* état initial transparent */
         animation-name: fadeIn;
         animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
@@ -63,6 +73,10 @@
         animation-duration: 1s; 
     }
     &__Dishes ol {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
         opacity: 0; /* état initial transparent */
         animation-name: fadeIn;
         animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
@@ -70,6 +84,10 @@
         animation-duration: 1s; 
     }
     &__Desserts ol {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
         opacity: 0; /* état initial transparent */
         animation-name: fadeIn;
         animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
@@ -144,7 +162,7 @@
     }
 }
 
-.backgroundRectangle--backgroundColorWhite {
+.menu .backgroundRectangle--backgroundColorWhite {
 
     padding: 0;
 

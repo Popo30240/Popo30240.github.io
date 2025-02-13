@@ -417,25 +417,29 @@ input[type=checkbox] {
   justify-content: center;
 }
 
-.backgroundMenu {
-  display: flex;
-  justify-content: center;
+@media (min-width: 1024px) {
+  .backgroundMenu {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #F2F2F2;
-  width: 1024px;
-  border-radius: 25px 25px 0 0;
   padding: 40px 0 30px 0;
   margin-top: -25px;
+  min-width: 375px;
 }
 .menu__cardTitle {
   padding-top: 30px;
-  margin-left: 10px;
 }
 @media (min-width: 1024px) {
-  .menu__cardTitle {
-    margin-left: 180px;
+  .menu {
+    width: 1024px;
+    border-radius: 25px 25px 0 0;
   }
   .menu ol {
     flex-direction: column;
@@ -445,13 +449,17 @@ input[type=checkbox] {
   min-width: 349px;
   height: 69px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .menu .functioning__link li {
     max-width: 634px;
     width: 634px;
   }
 }
 .menu__Enter ol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   opacity: 0; /* état initial transparent */
   animation-name: fadeIn;
   animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
@@ -459,6 +467,10 @@ input[type=checkbox] {
   animation-duration: 1s;
 }
 .menu__Dishes ol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   opacity: 0; /* état initial transparent */
   animation-name: fadeIn;
   animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
@@ -466,6 +478,10 @@ input[type=checkbox] {
   animation-duration: 1s;
 }
 .menu__Desserts ol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   opacity: 0; /* état initial transparent */
   animation-name: fadeIn;
   animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
@@ -531,55 +547,55 @@ input[type=checkbox] {
   }
 }
 
-.backgroundRectangle--backgroundColorWhite {
+.menu .backgroundRectangle--backgroundColorWhite {
   padding: 0;
   /* Permet à l'élément CheckAnimation d'être caché quant il est en-dehors*/
   overflow: hidden;
   /* Si l'élément n'est pas activé alors l'élément checkAnimation est déplacé hors de l'élement et caché */
   /* Si l'élément est activé alors l'élément checkAnimation vient coulisser */
 }
-.backgroundRectangle--backgroundColorWhite:not(:active) .menu__description h3,
-.backgroundRectangle--backgroundColorWhite:not(:active) .menu__description p {
+.menu .backgroundRectangle--backgroundColorWhite:not(:active) .menu__description h3,
+.menu .backgroundRectangle--backgroundColorWhite:not(:active) .menu__description p {
   width: 250px;
   white-space: nowrap; /* empêche le retour à la ligne */
   overflow: hidden; /* masque le texte qui déborde */
   text-overflow: ellipsis; /* tronque le texte avec "..." */
 }
 @media (min-width: 768px) {
-  .backgroundRectangle--backgroundColorWhite:not(:active) .menu__description h3,
-  .backgroundRectangle--backgroundColorWhite:not(:active) .menu__description p {
+  .menu .backgroundRectangle--backgroundColorWhite:not(:active) .menu__description h3,
+  .menu .backgroundRectangle--backgroundColorWhite:not(:active) .menu__description p {
     width: 100%;
   }
 }
-.backgroundRectangle--backgroundColorWhite:not(:active) .menu__price {
+.menu .backgroundRectangle--backgroundColorWhite:not(:active) .menu__price {
   /* On déplace l'élément de 150% à droite*/
   transform: translateX(150%);
   transition: transform 500ms ease-in;
 }
-.backgroundRectangle--backgroundColorWhite:not(:active) .menu__checkAnimation {
+.menu .backgroundRectangle--backgroundColorWhite:not(:active) .menu__checkAnimation {
   /* On déplace l'élément de 150% à droite*/
   transform: translateX(150%);
   transition: transform 500ms ease-in;
 }
-.backgroundRectangle--backgroundColorWhite:active .menu__description h3,
-.backgroundRectangle--backgroundColorWhite:active .menu__description p {
+.menu .backgroundRectangle--backgroundColorWhite:active .menu__description h3,
+.menu .backgroundRectangle--backgroundColorWhite:active .menu__description p {
   width: 220px;
   white-space: nowrap; /* empêche le retour à la ligne */
   overflow: hidden; /* masque le texte qui déborde */
   text-overflow: ellipsis; /* tronque le texte avec "..." */
 }
 @media (min-width: 768px) {
-  .backgroundRectangle--backgroundColorWhite:active .menu__description h3,
-  .backgroundRectangle--backgroundColorWhite:active .menu__description p {
+  .menu .backgroundRectangle--backgroundColorWhite:active .menu__description h3,
+  .menu .backgroundRectangle--backgroundColorWhite:active .menu__description p {
     width: 100%;
   }
 }
-.backgroundRectangle--backgroundColorWhite:active .menu__price {
+.menu .backgroundRectangle--backgroundColorWhite:active .menu__price {
   /* On déplace l'élément sur son point initial*/
   transform: translateX(0%);
   transition: transform 250ms ease-out;
 }
-.backgroundRectangle--backgroundColorWhite:active .menu__checkAnimation {
+.menu .backgroundRectangle--backgroundColorWhite:active .menu__checkAnimation {
   /* On déplace l'élément sur son point initial*/
   transform: translateX(0%);
   transition: transform 250ms ease-out;
