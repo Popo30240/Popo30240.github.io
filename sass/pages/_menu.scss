@@ -17,9 +17,12 @@
     }
 }
 
-.mainMenu {
-    display: flex;
-    justify-content: center;
+.headernavbarMenu .navbar__title p {
+    @media (min-width: 1024px) {
+        & {
+            padding: 0;
+        }
+    } 
 }
 
 .backgroundMenu {
@@ -38,62 +41,56 @@
     background-color: $grey-light-color;
     padding: 40px 0 30px 0;
     margin-top: -25px;
-    min-width: 375px;
+    border-radius: 25px 25px 0 0;
     &__cardTitle {
-        padding-top: 30px;
+        padding-top: 8%;
     }
     @media (min-width: 1024px) {
         & {
-            width: 1024px;
-            border-radius: 25px 25px 0 0;
+            width: 1055px;
         }
         & ol {    
             flex-direction: column;
         }
     }
     & .functioning__link li {
-        min-width: 349px;
-        height: 69px;
-        @media (min-width: 768px) {
-            & {    
-                max-width: 634px;
-                width: 634px;
-            }
+         height: 69px;
+         margin: 3%;
+    }
+    &__Enter {
+        width: 100%;
+        max-width: 634px;
+        & ol {
+            opacity: 0; /* état initial transparent */
+            animation-name: fadeIn;
+            animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
+            animation-delay: 2s; /* Le délai qui doit se passer avant l'état final */  
+            animation-duration: 1s; 
         }
     }
-    &__Enter ol {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        opacity: 0; /* état initial transparent */
-        animation-name: fadeIn;
-        animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
-        animation-delay: 2s; /* Le délai qui doit se passer avant l'état final */  
-        animation-duration: 1s; 
+    &__Dishes {
+        width: 100%;
+        max-width: 634px;
+        & ol {
+            opacity: 0; /* état initial transparent */
+            animation-name: fadeIn;
+            animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
+            animation-delay: 4s; /* Le délai qui doit se passer avant l'état final */  
+            animation-duration: 1s; 
+        }
     }
-    &__Dishes ol {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        opacity: 0; /* état initial transparent */
-        animation-name: fadeIn;
-        animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
-        animation-delay: 4s; /* Le délai qui doit se passer avant l'état final */  
-        animation-duration: 1s; 
+    &__Desserts {
+        width: 100%;
+        max-width: 634px;
+        & ol {
+            opacity: 0; /* état initial transparent */
+            animation-name: fadeIn;
+            animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
+            animation-delay: 6s; /* Le délai qui doit se passer avant l'état final */  
+            animation-duration: 1s; 
+        }
     }
-    &__Desserts ol {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        opacity: 0; /* état initial transparent */
-        animation-name: fadeIn;
-        animation-fill-mode: forwards; /* Après l’animation : Grâce à animation-fill-mode: forwards, l’élément reste visible avec une opacité de 1 */
-        animation-delay: 6s; /* Le délai qui doit se passer avant l'état final */  
-        animation-duration: 1s; 
-    }
+    
     & h2 {
         font-family: Roboto;
         font-size: 16px;
@@ -154,11 +151,6 @@
         font-family: Shrikhand;
         font-size: 28px;
         font-weight: 400;
-        @media (min-width: 1024px) {
-            & {
-                padding-right: 30px;
-            }
-        }
     }
 }
 

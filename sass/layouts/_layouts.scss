@@ -127,14 +127,7 @@
         border-radius: 3px 3px 3px 3px;
         position: absolute;
         top:10px;
-        left:250px;
-        @media (min-width: 768px) {
-            & {    
-                top: 25px;
-                left: 355px;
-            }
-        /* Styles adaptés aux tablettes, etc. */
-        }
+        right: 20px;
         & p {
             opacity: 50%;
         }
