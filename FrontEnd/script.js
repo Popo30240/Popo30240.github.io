@@ -17,11 +17,18 @@ function genereButton(category) {
   buttonElement.innerText = buttonFiltrer;
   sectionPortfolio.appendChild(buttonElement);
 }
-/*
+
+/**
+ * 
+ * @param {string} array 
+ * @param {string} category 
+ * @returns {object} : les données de l'API filtrées par catégorie
+ */
 function filterByCategory(array, category) {
+  const objetFilter = array.filter(array => array.category.name === "category");
+  console.log("filtre par catégorie", objetFilter);
   return array.filter(item => item.category.name === category);
 }
-*/
 
 /**
  * 
@@ -75,30 +82,41 @@ async function fetchDataGallery() {
         throw new Error("Erreur réseau : " + response.status);
       }
       const dataGallery = await response.json();
-      //console.log("Données de l'API", dataGallery);
-
+      console.log("Données de l'API", dataGallery);
+      /*
       const boutonAll = document.querySelector("button");
       boutonAll.addEventListener("click", function () {
         for (let i = 0; i < dataGallery.length; i++) {
           genereGallery(dataGallery[i]);
         }
       });
-
-      /*
-      for (let i = 0; i < dataGallery.length; i++) {
-        const Category = dataGallery[i].category.name;
-        console.log("type de la catégorie", Category);
-      }
-        */
-      /*
-      const Category = dataGallery[i].category.id;
-      console.log("type de la catégorie", Category);
-      genereButton(Category);
-
-      for (let i = 0; i < dataGallery.length; i++) {
-        genereButton(dataGallery[i].category.name);
-      }
+      */
+     /*
+      const boutonObjet = document.querySelector("button");
+      boutonObjet.addEventListener("click", function () {
+        category = filterByCategory(dataGallery, "Objets")
+        for (let i = 0; i < category.length; i++) {
+          genereGallery(category[i]);
+        }
+      });
 */
+/*
+      const boutonAppartements = document.querySelector("button");
+      boutonAppartements.addEventListener("click", function () {
+        category = filterByCategory(dataGallery, "Appartements")
+        for (let i = 0; i < category.length; i++) {
+          genereGallery(category[i]);
+        }
+      });
+*/
+      const boutonHotelsRestaurants = document.querySelector("button");
+      boutonHotelsRestaurants.addEventListener("click", function () {
+        category = filterByCategory(dataGallery, "Hotels & restaurants")
+        for (let i = 0; i < category.length; i++) {
+          genereGallery(category[i]);
+        }
+      });
+      
 /*
       dataGallery.forEach(item => {
         const typeCategory = item.category.name;
@@ -126,5 +144,5 @@ async function fetchDataGallery() {
   
 fetchDataGallery();
 
-genereButton("tous");
+genereButton("Objets");
 
