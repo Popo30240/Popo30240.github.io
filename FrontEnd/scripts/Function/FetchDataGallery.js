@@ -10,104 +10,62 @@
 
 async function fetchDataGallery() {
     try {
-      const response = await fetch("http://localhost:5678/api/works");
-      if (!response.ok) {
-        throw new Error("Erreur réseau : " + response.status);
+
+      const responseWorks = await fetch("http://localhost:5678/api/works");
+      if (!responseWorks.ok) {
+        throw new Error("Erreur réseau : " + responseWorks.status);
       }
-      const dataGallery = await response.json();
-      console.log("Données de l'API", dataGallery);
+
+      const responseCategories = await fetch("http://localhost:5678/api/categories");
+      if (!responseCategories.ok) {
+        throw new Error("Erreur réseau : " + responseCategories.status);
+      }
+
+      const dataGallery = await responseWorks.json();
+      //console.log("Données de l'API 'Galerie' ", dataGallery);
+
+      const dataCategories = await responseCategories.json();
+      //console.log("Données de l'API 'catégorie' ", dataCategories);
 
       // On génére le bouton tous
       genereButton("tous");
 
-      //On affiche les données de l'API
+      //On affiche la galerie daans sa totalité
       for (let i = 0; i < dataGallery.length; i++) {
         genereGallery(dataGallery[i]);
       }
 
-      // On récupère les catégories de la galerie
-      const category = dataGallery.map(item => item.category.name);
-      console.log("Catégories de la galerie", category);
-      // On supprime les doublons
-      const noDuplicateCategory = [...new Set(category)];
-      console.log("Catégories de la galerie sans doublons", noDuplicateCategory);
-
-      // On génére les boutons pour chaqu'une des catégories
-      for (let i = 0; i < noDuplicateCategory.length; i++) {
-        genereButton(noDuplicateCategory[i]);
+      // On génére les boutons pour chaqu'une des catégories récupérées par l'API
+      for (let i = 0; i < dataCategories.length; i++) {
+        genereButton(dataCategories[i].name);
+        console.log("Boutons générés par 'catégorie' ", dataCategories[i].name);
       }
 
-/*
-      const boutonAll = document.querySelector("button");
-      boutonAll.addEventListener("click", function () {
-        // On efface le contenu de la class gallery
-        document.querySelector(".gallery").innerHTML = "";
-        // On affiche les données de l'API par catégorie
-        for (let i = 0; i < dataGallery.length; i++) {
-          genereGallery(dataGallery[i]);
-        }
-      });
-*/
-/*
-      const boutonObjet = document.querySelector("button");
-      boutonObjet.addEventListener("click", function () {
-        // On efface le contenu de la class gallery
-        document.querySelector(".gallery").innerHTML = "";
-        // On filtre les données de l'API par catégorie
-        category = filterByCategory(dataGallery, "Objets")
-        //On affiche les données de l'API par catégorie
-        for (let i = 0; i < category.length; i++) {
-          genereGallery(category[i]);
-        }
-      });
-*/
-/*
-      const boutonAppartements = document.querySelector("button");
-      boutonAppartements.addEventListener("click", function () {
-        // On efface le contenu de la class gallery
-        document.querySelector(".gallery").innerHTML = "";
-        // On filtre les données de l'API par catégorie
-        category = filterByCategory(dataGallery, "Appartements")
-        On affiche les données de l'API par catégorie
-        for (let i = 0; i < category.length; i++) {
-          genereGallery(category[i]);
-        }
-      });
-*/
-/*
-      const boutonHotelsRestaurants = document.querySelector("button");
-      boutonHotelsRestaurants.addEventListener("click", function () {
-        // On efface le contenu de la class gallery
-        document.querySelector(".gallery").innerHTML = "";
-        // On filtre les données de l'API par catégorie
-        category = filterByCategory(dataGallery, "Hotels & restaurants")
-        // On affiche les données de l'API par catégorie
-        for (let i = 0; i < category.length; i++) {
-          genereGallery(category[i]);
-        }
-      });
-*/    
-/*
-      dataGallery.forEach(item => {
-        const typeCategory = item.category.name;
-        console.log("type de la catégorie", typeCategory);
-        
-        switch (typeCategory) {
-          case 1:
-            genereButton(typeCategory);
-            break;
-          case 2:
-            genereButton(typeCategory);
-            break;
-          case 3:
-            genereButton(typeCategory);
-            break;
-          default:
-            break;
-        }
-      });
-*/
+      const boutons = document.querySelectorAll("button");
+      console.log(boutons);
+
+      for (let i = 0; i < boutons.length; i++) {
+        boutons[i].addEventListener("click", function () {
+          // On efface le contenu de la class gallery
+          document.querySelector(".gallery").innerHTML = "";
+          console.log("Boutons cliqués", boutons[i].innerText);
+          console.log("Numéro de l'index des boutons est ", [i]);
+          // Si le bouton cliqué est "tous" on affiche toute la galerie depuis l'API
+          if (boutons[i].innerText === "tous") {
+            for (let i = 0; i < dataGallery.length; i++) {
+              genereGallery(dataGallery[i]);
+            }
+            // Sinon on filtre la galerie de l'API par catégorie
+          } else {
+            const categoryFilter = filterByCategory(dataGallery, boutons[i].innerText);
+            console.log("Données générées par catégorie filtrée", categoryFilter);
+            for (let i = 0; i < categoryFilter.length; i++) {
+              genereGallery(categoryFilter[i]);
+            }
+          }
+        });
+      }  
     } catch (error) {
       console.error("Erreur lors de la récupération des données :", error);
     }
-  }
+}

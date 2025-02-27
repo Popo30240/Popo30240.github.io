@@ -31,5 +31,5 @@ function genereGallery(array) {
   
     baliseElement.appendChild(imageElement);
     baliseElement.appendChild(titleElement);
-    console.log("Données de l'API", itemGallery);
+    //console.log("Données de l'API", itemGallery);
   }
