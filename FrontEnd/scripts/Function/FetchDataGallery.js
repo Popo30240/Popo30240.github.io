@@ -9,63 +9,78 @@
 /*La fonction async permet de continuer à éxécuter la suite du code après la fonction pendant son traitement */
 
 async function fetchDataGallery() {
-    try {
+  try {
+    let dataGallery, dataCategories;
 
+    // Vérifier si les données existent déjà dans le localStorage
+    const storedGallery = localStorage.getItem("dataGallery");
+    const storedCategories = localStorage.getItem("dataCategories");
+
+    if (storedGallery && storedCategories) {
+      // Si elles existent, on les utilise
+      dataGallery = JSON.parse(storedGallery);
+      dataCategories = JSON.parse(storedCategories);
+      console.log("Données récupérées depuis le localStorage");
+    } else {
+      // Sinon, on effectue les appels API
       const responseWorks = await fetch("http://localhost:5678/api/works");
       if (!responseWorks.ok) {
         throw new Error("Erreur réseau : " + responseWorks.status);
       }
-
       const responseCategories = await fetch("http://localhost:5678/api/categories");
       if (!responseCategories.ok) {
         throw new Error("Erreur réseau : " + responseCategories.status);
       }
 
-      const dataGallery = await responseWorks.json();
-      //console.log("Données de l'API 'Galerie' ", dataGallery);
+      dataGallery = await responseWorks.json();
+      dataCategories = await responseCategories.json();
 
-      const dataCategories = await responseCategories.json();
-      //console.log("Données de l'API 'catégorie' ", dataCategories);
-
-      // On génére le bouton tous
-      genereButton("tous");
-
-      //On affiche la galerie daans sa totalité
-      for (let i = 0; i < dataGallery.length; i++) {
-        genereGallery(dataGallery[i]);
-      }
-
-      // On génére les boutons pour chaqu'une des catégories récupérées par l'API
-      for (let i = 0; i < dataCategories.length; i++) {
-        genereButton(dataCategories[i].name);
-        console.log("Boutons générés par 'catégorie' ", dataCategories[i].name);
-      }
-
-      const boutons = document.querySelectorAll("button");
-      console.log(boutons);
-
-      for (let i = 0; i < boutons.length; i++) {
-        boutons[i].addEventListener("click", function () {
-          // On efface le contenu de la class gallery
-          document.querySelector(".gallery").innerHTML = "";
-          console.log("Boutons cliqués", boutons[i].innerText);
-          console.log("Numéro de l'index des boutons est ", [i]);
-          // Si le bouton cliqué est "tous" on affiche toute la galerie depuis l'API
-          if (boutons[i].innerText === "tous") {
-            for (let i = 0; i < dataGallery.length; i++) {
-              genereGallery(dataGallery[i]);
-            }
-            // Sinon on filtre la galerie de l'API par catégorie
-          } else {
-            const categoryFilter = filterByCategory(dataGallery, boutons[i].innerText);
-            console.log("Données générées par catégorie filtrée", categoryFilter);
-            for (let i = 0; i < categoryFilter.length; i++) {
-              genereGallery(categoryFilter[i]);
-            }
-          }
-        });
-      }  
-    } catch (error) {
-      console.error("Erreur lors de la récupération des données :", error);
+      // Enregistrer les données dans le localStorage pour une utilisation future
+      localStorage.setItem("dataGallery", JSON.stringify(dataGallery));
+      localStorage.setItem("dataCategories", JSON.stringify(dataCategories));
+      console.log("Données sauvegardées dans le localStorage");
     }
+
+    // Génération du bouton "tous"
+    genereButton("tous");
+
+    // Affichage de toute la galerie
+    for (let i = 0; i < dataGallery.length; i++) {
+      genereGallery(dataGallery[i]);
+    }
+
+    // Génération des boutons pour chacune des catégories récupérées
+    for (let i = 0; i < dataCategories.length; i++) {
+      genereButton(dataCategories[i].name);
+      console.log("Boutons générés par 'catégorie' :", dataCategories[i].name);
+    }
+
+    const boutons = document.querySelectorAll("button");
+    console.log(boutons);
+
+    for (let i = 0; i < boutons.length; i++) {
+      boutons[i].addEventListener("click", function () {
+        // On efface le contenu de la classe gallery
+        document.querySelector(".gallery").innerHTML = "";
+        console.log("Bouton cliqué :", boutons[i].innerText);
+        console.log("Index du bouton :", i);
+
+        // Si le bouton cliqué est "tous", on affiche toute la galerie
+        if (boutons[i].innerText === "tous") {
+          for (let j = 0; j < dataGallery.length; j++) {
+            genereGallery(dataGallery[j]);
+          }
+        } else {
+          // Sinon, on filtre la galerie par catégorie
+          const categoryFilter = filterByCategory(dataGallery, boutons[i].innerText);
+          console.log("Données filtrées par catégorie :", categoryFilter);
+          for (let j = 0; j < categoryFilter.length; j++) {
+            genereGallery(categoryFilter[j]);
+          }
+        }
+      });
+    }
+  } catch (error) {
+    console.error("Erreur lors de la récupération des données :", error);
+  }
 }
