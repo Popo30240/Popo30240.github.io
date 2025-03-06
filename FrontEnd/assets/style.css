@@ -22,11 +22,15 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	color: inherit;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
+}
+html{
+	background-color: white;
 }
 body {
 	line-height: 1;
@@ -48,7 +52,9 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
+	position: relative;
+	overflow: visible; /* Permet à l'enfant de dépasser */
+	max-width: 1440px;
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
@@ -56,10 +62,26 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 3% 150px 0 150px;
+	position: relative;
+}
+main {
+	width: 68%;
+	position: absolute;
+	z-index: -1;
+    top: -45px;
+    left: 15.3%;
+	margin: auto;
+	padding-bottom: 100px;
+	border-left: 2px solid rgb(247 204 191);
+	border-right: 2px solid rgb(247 204 191);
+}
+.bodyLogin main{
+	padding-bottom: 180px;
 }
 section {
-	margin: 50px 0
+	padding-top: 15%;
+	margin-bottom: 15%;
 }
 
 h1{
@@ -84,6 +106,9 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+.bodyLogin li:nth-child(3){
+	font-weight: bold;
+}
 nav ul {
 	display: flex;
 	align-items: center;
@@ -93,6 +118,10 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+}
+
+nav a {
+	text-decoration:none;
 }
 
 li:hover {
@@ -107,7 +136,6 @@ li:hover {
 }
 #introduction img {
 	display: block;
-	margin: auto;
 	width: 80%;
 }
 
@@ -123,7 +151,34 @@ li:hover {
 }
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
+	margin-bottom: 1.8em;
+}
+#portfolio .buttons {
+	display: flex;
+	justify-content: center;
+}
+button {
+	font-family: 'Syne';
+	font-weight: 700;
+	margin: 0 5px 50px 5px;
+	padding: 0.5rem 1rem;
+    font-size: 16px;
+	text-align: center;
+	border-radius: 60px;
+	border: 1px solid;
+	cursor: pointer;
+}
+.buttons button {
+	color: #1D6154;
+	background-color: white;
+}
+.buttons button:hover {
+	color: white;
+	background-color: #1D6154;
+}
+#login button {
+	color: white;
+	background-color: #1D6154;
 }
 .gallery {
 	width: 100%;
@@ -137,38 +192,45 @@ li:hover {
 	width: 100%;
 
 }
-#contact {
+#contact,#login {
 	width: 50%;
-margin: auto;
+	margin: auto;
 }
-#contact > * {
+#contact > *
+,#login > * {
 	text-align: center;
 
 }
-#contact h2{
+#contact h2,
+#login h2{
 	margin-bottom: 20px;
 }
-#contact form {
+#contact form,
+#login form {
 	text-align: left;
 	margin-top:30px;
 	display: flex;
 	flex-direction: column;
 }
-
-#contact input {
+#contact label {
+	margin: 2em 0 1em 0;
+}
+#login label {
+	padding-top: 10%;
+	font-weight: bold;
+}
+#contact input,
+#login input {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-}
-#contact label {
-	margin: 2em 0 1em 0;
+	cursor: pointer;
 }
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-
 input[type="submit"]{
 	font-family: 'Syne';
 	font-weight: 700;
@@ -177,9 +239,16 @@ input[type="submit"]{
 	margin : 2em auto ;
 	width: 180px;
 	text-align: center;
-	border-radius: 60px ;
+	border-radius: 60px;
 }
 
+footer {
+	position: relative;
+    bottom: -3565px;
+}
+.bodyLogin footer{
+	bottom: -580px;
+}
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;

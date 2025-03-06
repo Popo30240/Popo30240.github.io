@@ -9,7 +9,7 @@
 
 function genereButton(category) {
     const buttonFiltrer = category;
-    const sectionPortfolio = document.querySelector(".titlePortfolio");
+    const sectionPortfolio = document.querySelector(".buttons");
     const buttonElement = document.createElement("button");
     //buttonElement.className(".buttonFiltrer");
     buttonElement.innerText = buttonFiltrer;

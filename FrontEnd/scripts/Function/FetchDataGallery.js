@@ -8,10 +8,11 @@
  */
 /*La fonction async permet de continuer à éxécuter la suite du code après la fonction pendant son traitement */
 
+let dataGallery, dataCategories;
+
 async function fetchDataGallery() {
   try {
-    let dataGallery, dataCategories;
-
+  
     // Vérifier si les données existent déjà dans le localStorage
     const storedGallery = localStorage.getItem("dataGallery");
     const storedCategories = localStorage.getItem("dataCategories");
@@ -20,7 +21,7 @@ async function fetchDataGallery() {
       // Si elles existent, on les utilise
       dataGallery = JSON.parse(storedGallery);
       dataCategories = JSON.parse(storedCategories);
-      console.log("Données récupérées depuis le localStorage");
+      console.log("Données récupérées depuis le localStorage", dataGallery, dataCategories);
     } else {
       // Sinon, on effectue les appels API
       const responseWorks = await fetch("http://localhost:5678/api/works");
@@ -38,13 +39,13 @@ async function fetchDataGallery() {
       // Enregistrer les données dans le localStorage pour une utilisation future
       localStorage.setItem("dataGallery", JSON.stringify(dataGallery));
       localStorage.setItem("dataCategories", JSON.stringify(dataCategories));
-      console.log("Données sauvegardées dans le localStorage");
+      //console.log("Données sauvegardées dans le localStorage");
     }
 
     // Génération du bouton "tous"
-    genereButton("tous");
+    genereButton("Tous");
 
-    // Affichage de toute la galerie
+    // On génère toute la galerie
     for (let i = 0; i < dataGallery.length; i++) {
       genereGallery(dataGallery[i]);
     }
@@ -66,7 +67,7 @@ async function fetchDataGallery() {
         console.log("Index du bouton :", i);
 
         // Si le bouton cliqué est "tous", on affiche toute la galerie
-        if (boutons[i].innerText === "tous") {
+        if (boutons[i].innerText === "Tous") {
           for (let j = 0; j < dataGallery.length; j++) {
             genereGallery(dataGallery[j]);
           }
