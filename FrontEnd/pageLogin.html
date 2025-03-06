@@ -9,7 +9,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
-	<script src="scripts/config.js" defer></script> 
+	<script src="scripts/config.js" defer></script>
+	<script src="scripts/Function/FetchData.js" defer></script> 
 	<script src="scripts/script.js" defer></script>
 	<script src="scripts/main.js" defer></script>
 </head>
@@ -28,7 +29,7 @@
 <main class="mainLogin">
 	<section id="login">
 		<h2>Log In</h2>
-		<form action="#" method="post">
+		<form id="login-form" action="#" method="post">
 			<label for="email">E-mail</label>
 			<input type="email" id="email" name="email" placeholder="Entrez votre email" required>
 
@@ -37,6 +38,7 @@
 			
 			<input type="submit" value="Se connecter">
 		</form>
+		<div id="message"></div>
 		<p><a href="#">Mot de passe oublié</a></p>
 	</section>
 </main>

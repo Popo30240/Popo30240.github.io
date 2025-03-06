@@ -1,3 +1,5 @@
+let globalData;
+
 async function fetchData(url) {
     try {
         const response = await fetch(url);

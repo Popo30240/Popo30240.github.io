@@ -231,6 +231,9 @@ button {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+.error {
+	border:red 2px solid;
+}
 input[type="submit"]{
 	font-family: 'Syne';
 	font-weight: 700;
