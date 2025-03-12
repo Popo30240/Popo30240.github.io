@@ -59,6 +59,19 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+.bannerEdition {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	height: 59px;
+	background-color: black;
+	color:white;
+	font-size: 16px;
+
+}
+.bannerEdition i{
+	margin-right: 10px;
+}
 header {
 	display: flex;
 	justify-content: space-between;
@@ -80,8 +93,12 @@ main {
 	padding-bottom: 180px;
 }
 section {
+	/*
 	padding-top: 15%;
 	margin-bottom: 15%;
+	*/
+	padding-top: 30%;
+    margin-bottom: -15%;
 }
 
 h1{
@@ -247,10 +264,10 @@ input[type="submit"]{
 
 footer {
 	position: relative;
-    bottom: -3565px;
+    bottom: -3346px;
 }
 .bodyLogin footer{
-	bottom: -580px;
+	bottom: -720px;
 }
 footer nav ul {
 	display: flex;
