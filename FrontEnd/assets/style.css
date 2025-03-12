@@ -53,7 +53,6 @@ table {
 /** end reset css**/
 body {
 	position: relative;
-	overflow: visible; /* Permet à l'enfant de dépasser */
 	max-width: 1440px;
 	margin:auto;
 	font-family: 'Work Sans' ;
@@ -90,7 +89,7 @@ main {
 	border-right: 2px solid rgb(247 204 191);
 }
 .bodyLogin main{
-	padding-bottom: 180px;
+	padding-bottom: 1000px;
 }
 section {
 	/*
@@ -263,11 +262,9 @@ input[type="submit"]{
 }
 
 footer {
-	position: relative;
-    bottom: -3346px;
-}
-.bodyLogin footer{
-	bottom: -720px;
+	position: fixed;
+    top: 93%;
+    left: 77%;
 }
 footer nav ul {
 	display: flex;
