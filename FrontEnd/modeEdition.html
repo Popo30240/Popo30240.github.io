@@ -11,23 +11,19 @@
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="https://kit.fontawesome.com/8e472dab1d.js" crossorigin="anonymous"></script>
 	<script src="scripts/config.js" defer></script>
-	<script src="scripts/Function/FetchData.js" defer></script>
-	<script src="scripts/Function/FetchDataGallery.js" defer></script> 
-	<script src="scripts/Function/filterByCategory.js" defer></script> 
-	<script src="scripts/Function/genereButton.js" defer></script>  
+	<script src="scripts/Function/FetchData.js" defer></script>   
 	<script src="scripts/Function/genereGallery.js" defer></script>  
-	<script src="scripts/script.js" defer></script>
-	<script src="scripts/main.js" defer></script>
+	<script src="scripts/mainModeEdition.js" defer></script>
 </head>
 
-<body>
+<body id="modeEdition">
 
 	<div class="bannerEdition">
 		<i class="fa-regular fa-pen-to-square"></i>
 		<p>Mode édition</p>
 	</div>
 
-	<div id="maxWidth1440">
+	<div>
 		<header class="headerEdition">
 			<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 			<nav>
@@ -52,9 +48,23 @@
 				</article>
 			</section>
 			<section id="portfolio">
-				<h2 class="titlePortfolio">Mes Projets</h2>
-				<div class="buttons">
-
+				<div class="containerButton">	
+					<h2 class="titlePortfolio">Mes Projets</h2>
+					<a id="buttonModification" class="buttonModification" href="#">
+						<i class="fa-regular fa-pen-to-square"></i>
+						<p>modifier</p>
+					</a>
+				</div>
+				<div id="gallery-modal" class="modal">
+					<div class="modal-content">
+						<span class="close-btn">&times;</span>
+						<h2>Galerie Photo</h2>
+						<div class="gallery-edition" id="gallery-edition">
+							<!-- Les images seront injectées ici depuis l'API -->
+						</div>
+						<hr class="line">
+						<button id="add-photo-btn">Ajouter une photo</button>
+					</div>
 				</div>
 				<div class="gallery">
 

@@ -6,17 +6,12 @@
  * On retourne les données de l'API et on les converties en JSON
  * @returns {object} : les données de l'API
  */
-/*La fonction async permet de continuer à éxécuter la suite du code après la fonction pendant son traitement */
 
 let dataGallery, dataCategories;
 
 async function fetchDataGallery() {
   try {
-  
-    // Vérifier si les données existent déjà dans le localStorage
-    const storedGallery = localStorage.getItem("dataGallery");
-    const storedCategories = localStorage.getItem("dataCategories");
-
+    
     if (storedGallery && storedCategories) {
       // Si elles existent, on les utilise
       dataGallery = JSON.parse(storedGallery);
