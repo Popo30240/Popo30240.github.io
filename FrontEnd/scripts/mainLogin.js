@@ -1,61 +1,61 @@
-document.getElementById('login-form').addEventListener('submit', async function(e) {
-    e.preventDefault(); // Empêche le rechargement de la page
-    
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const messageDiv = document.getElementById('message');
-    
-    try {
-      // Étape 1 : Authentification auprès du serveur en envoyant l'email et le mot de passe
-      const response = await fetch('http://localhost:5678/api/users/login', { 
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-      });
-      // Si l'email et le mot de passe sont corrects
-      if (response.ok) {
-        // On récupére le token dans le data de la réponse
-        const data = await response.json();
-        console.log(data);
-        const token = data.token; // Extraire le token du JSON
-        console.log("Token reçu :", token);
-  
+console.log("Admin connecté :", adminConnected);
+
+document.getElementById('login-form').addEventListener('submit', async (e) => {
+  e.preventDefault(); // Empêche le rechargement de la page
+
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const messageDiv = document.getElementById('message');
+
+  try {
+    // Étape 1 : Authentification auprès du serveur en envoyant l'email et le mot de passe
+    const responseAuthentication = await fetch(urlLogin, { 
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    // Vérification de la réponse
+    if (responseAuthentication.ok) {
+
+        // On récupère le token de la réponse et on le stocke dans le localStorage
+        const data = await responseAuthentication.json();
+        const token = data.token;
+
+        // Stockage du token dans le localStorage
+        localStorage.setItem('authToken', token);
+
+        // Si la réponse est correcte, on affiche un message de réussite
+        messageDiv.style.color = 'green';
+        messageDiv.innerText = "Vous êtes connecté au mode édition !";
+
+        // On vérifie si le token existe et on passe la variable adminConnected à true
         if (token) {
-            const decoded = decodeJWT(token);
-            console.log("Informations contenues dans le token :", decoded);
+          // On indique que l'administrateur est connecté
+          adminConnected = true;
+        } else {
+          adminConnected = false; 
         }
-        /*
-        // Étape 2 : Validation du token auprès du serveur
-        const validationResponse = await fetch('http://localhost:5678/api/users/validateToken', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          }
-        });
-        */
-        //if (validationResponse.ok) {
-          // Le token est validé, on le stocke dans le LocalStorage
-         //localStorage.setItem('authToken', token);
-          messageDiv.style.color = 'green';
-          messageDiv.innerText = "Vous êtes connecté au mode édition !";
-          // Redirection vers le mode édition
-          window.location.href = 'modeEdition.html';
-        //} else {
-          // Si la validation échoue
-          //messageDiv.style.color = 'red';
-          //messageDiv.innerText = "Erreur dans l’identifiant ou le mot de passe";
-        //}
+
+        // On vérifie si le token existe et si l'administrateur est connecté
+        if (token && adminConnected === true) {
+          // Redirection vers le mode édition après un court délai pour laisser le temps au message de s'afficher
+          setTimeout(() => {
+            window.location.href = 'modeEdition.html';
+          }, 1500);
+        }
+
       } else {
-        // Si l'authentification initiale échoue
+
+        // Si la réponse est incorrecte, on affiche un message d'erreur
         messageDiv.style.color = 'red';
-        messageDiv.innerText = "Erreur dans l’identifiant ou le mot de passe";
-      }
-    } catch (error) {
-      console.error("Erreur:", error);
-      messageDiv.style.color = 'red';
-      messageDiv.innerText = "Erreur serveur. Veuillez réessayer plus tard.";
+        messageDiv.innerText = "Email ou mot de passe incorrect.";
     }
-  });
+
+  } catch (error) {
+    console.error("Erreur:", error);
+    messageDiv.style.color = 'red';
+    messageDiv.innerText = "Erreur serveur. Veuillez réessayer plus tard.";
+  }
+
+});

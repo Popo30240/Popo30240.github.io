@@ -198,7 +198,7 @@ li:hover {
 	justify-content: center;
 }
 /* Fond de la modale */
-.modal {
+#modeEdition .modal {
 	display: none;
 	position: fixed;
 	z-index: 1;
@@ -211,7 +211,7 @@ li:hover {
 }
 
 /* Contenu de la modale */
-.modal-content {
+#modeEdition .modal-content {
 	display: flex;
     justify-content: center;
     align-items: center;
@@ -224,9 +224,16 @@ li:hover {
 	height: 688px;
 	position: relative;
 }
-
+/* Bouton fermeture modale */
+#modeEdition .close-btn {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	cursor: pointer;
+	font-size: 24px;
+}
 /* Titre */
-.modal-content h2 {
+#modeEdition .modal-content h2 {
 	color:black;
 	margin-top: 0;
 	text-align: center;
@@ -234,9 +241,8 @@ li:hover {
 	font-weight: 400;
 	font-size: 26px;
 }
-
 /* Galerie */
-.gallery-edition {
+#modeEdition .gallery-edition {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-column-gap: 20px;
@@ -248,35 +254,27 @@ li:hover {
 	justify-content: center;
 	*/
 }
-
-.gallery-edition img {
+#modeEdition .gallery-edition img {
 	width: 76px;
 	height: 102px;
 	object-fit: cover;
-	border-radius: 4px;
 	position: relative;
 }
-
-.delete-btn {
+#modeEdition .delete-btn {
 	position: absolute;
 	top: 5px;
 	right: 5px;
 	background: rgba(255, 0, 0, 0.8);
 	color: #fff;
 	border: none;
-	border-radius: 50%;
 	cursor: pointer;
-	width: 20px;
-	height: 20px;
-	font-size: 12px;
-	line-height: 20px;
+	width: 17px;
+	height: 17px;
+	font-size: 18px;
+	line-height: 17px;
 	text-align: center;
 }
-
-.image-container {
-	position: relative;
-}
-.line {
+#modeEdition .line {
     border: none;
     height: 1px;
     width: 74%;
@@ -284,7 +282,7 @@ li:hover {
     margin: 5% 0 5% 0;
 }
 /* Bouton Ajouter photo */
-#add-photo-btn {
+#modeEdition #add-photo-btn {
 	margin-top: 15px;
 	width: 237px;
 	height: 36px;
@@ -292,14 +290,8 @@ li:hover {
 	color: white;
 	background-color: #1D6154;
 }
-
-/* Bouton fermeture modale */
-.close-btn {
-	position: absolute;
-	top: 10px;
-	right: 15px;
-	cursor: pointer;
-	font-size: 24px;
+.image-container {
+	position: relative;
 }
 button {
 	font-family: 'Syne';

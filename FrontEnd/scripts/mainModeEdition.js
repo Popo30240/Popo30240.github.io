@@ -1,37 +1,41 @@
-// On récupère les données depuis le localStorage
-dataGallery = JSON.parse(storedGallery);
-console.log("Données récupérées depuis le localStorage", dataGallery);
+adminConnected = true;
+console.log("Admin connecté :", adminConnected);
 
-// On génère toute la galerie
-for (let i = 0; i < dataGallery.length; i++) {
-    genereGallery(dataGallery[i]);
-}
+posterGalleryData(urlWorks);
 
-const modal = document.getElementById('gallery-modal');
+// Variables
+
+const adminLogoutBtn = document.getElementById('admin-logout-btn');
+const modalGallery = document.getElementById('gallery-modal');
+const modalAddPhoto = document.getElementById('add-photo-modal');
 const openModalBtn = document.getElementById('buttonModification');
 const closeBtn = document.querySelector('.close-btn');
 const gallery = document.getElementById('gallery-edition');
 const addPhotoBtn = document.getElementById('add-photo-btn');
 
 // Ouvrir et fermer la modale
-openModalBtn.onclick = () => modal.style.display = 'block';
-closeBtn.onclick = () => modal.style.display = 'none';
+openModalBtn.onclick = () => modalGallery.style.display = 'block';
+closeBtn.onclick = () => modalGallery.style.display = 'none';
 // Fermer la modale en cliquant en dehors
 window.onclick = (event) => {
-    if (event.target === modal) modal.style.display = 'none';
+    if (event.target === modalGallery) modalGallery.style.display = 'none';
 };
 
-// Charger les images depuis une API fictive
-function loadImages() {
+// Charger les images depuis une API
+async function editionModalGallery() {
 
-    //gallery.innerHTML = '';
+    const response = await fetch(urlWorks);
+    const images = await response.json();
 
-    dataGallery.forEach(img => {
+    gallery.innerHTML = '';
+
+    images.forEach(img => {
         const div = document.createElement('div');
         div.classList.add('image-container');
 
         const image = document.createElement('img');
-        image.src = img.thumbnailUrl;
+        image.src = img.imageUrl;
+        //console.log("Image de la galerie", img.imageUrl);
 
         const deleteBtn = document.createElement('button');
         deleteBtn.innerHTML = '&times;';
@@ -46,24 +50,18 @@ function loadImages() {
 
 // Simuler l'ajout d'une photo
 addPhotoBtn.onclick = () => {
-    const imageUrl = prompt("Entrez l'URL de l'image :");
-    if (imageUrl) {
-        const div = document.createElement('div');
-        div.classList.add('image-container');
+    // On ferme la modale
+    modalGallery.style.display = 'none';
+    // On ouvre la modale pour ajouter des photos
+    modalAddPhoto.style.display = 'block';
+};
 
-        const image = document.createElement('img');
-        image.src = imageUrl;
-
-        const deleteBtn = document.createElement('button');
-        deleteBtn.innerHTML = '&times;';
-        deleteBtn.classList.add('delete-btn');
-        deleteBtn.onclick = () => div.remove();
-
-        div.appendChild(image);
-        div.appendChild(deleteBtn);
-        gallery.appendChild(div);
-    }
+// Déconnexion de l'administrateur
+adminLogoutBtn.onclick = () => {
+    localStorage.removeItem('authToken');
+    adminConnected = false;
+    window.location.href = 'index.html';
 };
 
 // Initialiser la galerie au chargement
-loadImages();
+editionModalGallery();
