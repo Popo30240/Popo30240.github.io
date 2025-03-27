@@ -1,5 +1,3 @@
-console.log("Admin connecté :", adminConnected);
-
 document.getElementById('login-form').addEventListener('submit', async (e) => {
   e.preventDefault(); // Empêche le rechargement de la page
 
@@ -28,22 +26,11 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
         // Si la réponse est correcte, on affiche un message de réussite
         messageDiv.style.color = 'green';
         messageDiv.innerText = "Vous êtes connecté au mode édition !";
-
-        // On vérifie si le token existe et on passe la variable adminConnected à true
-        if (token) {
-          // On indique que l'administrateur est connecté
-          adminConnected = true;
-        } else {
-          adminConnected = false; 
-        }
-
-        // On vérifie si le token existe et si l'administrateur est connecté
-        if (token && adminConnected === true) {
-          // Redirection vers le mode édition après un court délai pour laisser le temps au message de s'afficher
-          setTimeout(() => {
-            window.location.href = 'modeEdition.html';
-          }, 1500);
-        }
+     
+        // Redirection vers le mode édition après un court délai pour laisser le temps au message de s'afficher
+        setTimeout(() => {
+          window.location.href = 'modeEdition.html';
+        }, 1500);
 
       } else {
 

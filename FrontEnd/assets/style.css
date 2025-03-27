@@ -58,7 +58,7 @@ table {
 /** end reset css**/
 body {
 	position: relative;
-	max-width: 1440px;
+	/* max-width: 1440px; */
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
@@ -80,30 +80,28 @@ header {
 	display: flex;
 	justify-content: space-between;
 	margin: 3% 150px 0 150px;
-	position: relative;
+	/* position: relative; */
 }
 main {
 	width: 68%;
 	/* max-width: 940px; */
-	position: absolute;
+	/* position: absolute;
 	z-index: -1;
     top: -45px;
-    left: 15.3%;
+    left: 15.3%; */
 	margin: auto;
 	padding-bottom: 100px;
-	border-left: 2px solid rgb(247 204 191);
-	border-right: 2px solid rgb(247 204 191);
+	/* border-left: 2px solid rgb(247 204 191);
+	border-right: 2px solid rgb(247 204 191); */
 }
 .bodyLogin main{
 	padding-bottom: 1000px;
 }
 section {
-	/*
 	padding-top: 15%;
 	margin-bottom: 15%;
-	*/
-	padding-top: 30%;
-    margin-bottom: -15%;
+	/* padding-top: 30%;
+    margin-bottom: -15%; */
 }
 
 h1{
@@ -131,7 +129,10 @@ h2{
 a {
 	text-decoration:none;
 }
-.bodyLogin li:nth-child(3){
+.login-Logout:hover{
+	font-weight: bold;
+}
+.bodyLogin .login-Logout{
 	font-weight: bold;
 }
 nav ul {
@@ -264,13 +265,13 @@ li:hover {
 	position: absolute;
 	top: 5px;
 	right: 5px;
-	background: rgba(255, 0, 0, 0.8);
+	background: black;
 	color: #fff;
 	border: none;
 	cursor: pointer;
 	width: 17px;
 	height: 17px;
-	font-size: 18px;
+	font-size: 11px;
 	line-height: 17px;
 	text-align: center;
 }
@@ -281,14 +282,26 @@ li:hover {
     background-color: #B3B3B3;
     margin: 5% 0 5% 0;
 }
-/* Bouton Ajouter photo */
-#modeEdition #add-photo-btn {
+#modeEdition .modal_button {
 	margin-top: 15px;
 	width: 237px;
 	height: 36px;
 	cursor: pointer;
+}
+/* Bouton Ajouter photo */
+#modeEdition #add-photo-btn {
 	color: white;
 	background-color: #1D6154;
+}
+#add-photo-modal #backModalGallery-btn {
+	position: absolute;
+    top: 10px;
+    left: 15px;
+	font-size: 24px;
+}
+#modeEdition #validate-btn {
+	color: white;
+	background-color: #A7A7A7;
 }
 .image-container {
 	position: relative;
@@ -381,11 +394,11 @@ input[type="submit"]{
 	border-radius: 60px;
 }
 
-footer {
+/* footer {
 	position: fixed;
     top: 93%;
     left: 83%;
-}
+} */
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;

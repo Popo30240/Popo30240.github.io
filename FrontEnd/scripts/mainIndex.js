@@ -1,11 +1,3 @@
-console.log("Admin connecté :", adminConnected);
-/**
- * Cette fonction permet de récupérer les données de l'API et de les filtrer par catégorie
- * On pointe sur l'url de l'API
- * @param {string} url : l'url de l'API
- * On retourne les données de l'API et on les converties en JSON
- * @returns {object} : les données de l'API
- */
 
 async function lunchGallery() {
 
