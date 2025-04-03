@@ -316,7 +316,10 @@ li:hover {
 	width: 129px;
 	height: 169px;
 	object-fit: cover;
-	position: relative;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 #modeEdition #validate-btn {
 	color: white;
@@ -388,9 +391,28 @@ button {
 }
 #login label,
 #add-photo-modal label {
-	padding-top: 10%;
 	font-weight: bold;
 	padding-bottom: 10px;
+    padding-top: 10px;
+}
+#add-photo-modal #contenairPhoto {
+	position: relative;
+}
+#add-photo-modal #contenairPhoto i {
+	font-size: 68px;
+	color:#B9C5CC;
+}
+body #add-photo-modal #photo-input {
+	display: none;
+}
+#add-photo-modal .add-picture-btn {
+	text-align: center;
+    padding: 11px;
+    width: 151px;
+	color:#306685;
+	background-color: #CBD6DC;
+	border-radius: 50px;
+	cursor: pointer;
 }
 #contact input,
 #login input,

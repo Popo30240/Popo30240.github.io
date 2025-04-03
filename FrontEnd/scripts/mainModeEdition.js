@@ -19,7 +19,8 @@ if (tokenLocalStorage) {
     const preview = document.getElementById('preview'); // Élément pour l'aperçu de l'image
     const errorMessage = document.getElementById('error-message'); // Élément pour afficher les messages d'erreur
     const categorySelect = document.getElementById('category-input');
-    
+    const addPictureBtn = document.querySelector('.add-picture-btn'); // Bouton d'ajout de photo
+    const formatPhoto = document.getElementById('format-photo'); // Élément pour la condition de photo
 
     // Gestion de l'ouverture et fermeture des modales avec addEventListener
     openModalBtn.addEventListener('click', () => {
@@ -127,6 +128,13 @@ if (tokenLocalStorage) {
     addPhotoBtn.addEventListener('click', () => {
         modalGallery.style.display = 'none';
         modalAddPhoto.style.display = 'block';
+        if (!preview) {
+            addPictureBtn.style.display = 'block'; // Afficher le bouton d'ajout de photo
+            formatPhoto.style.display = 'block'; // Afficher le texte d'instructions
+        } else {
+            // Réinitialiser le formulaire d'ajout de photo     
+            photoInput.value = '';
+        }
     });
     backButtonOnModalGallery.addEventListener('click', () => {
         modalAddPhoto.style.display = 'none';
@@ -165,6 +173,9 @@ if (tokenLocalStorage) {
                 if (preview) {
                     preview.src = e.target.result;
                     preview.style.display = 'block';
+
+                    addPictureBtn.style.display = 'none'; // Masquer le bouton d'ajout de photo
+                    formatPhoto.style.display = 'none'; // Masquer le texte d'instructions
                 }
             };
             reader.readAsDataURL(file);
