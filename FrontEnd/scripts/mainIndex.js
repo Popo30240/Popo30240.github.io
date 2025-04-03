@@ -3,30 +3,21 @@ async function lunchGallery() {
 
   try {
     
-    if (storedGallery && storedCategories) {
-      // Si elles existent, on les utilise
-      dataGallery = JSON.parse(storedGallery);
-      dataCategories = JSON.parse(storedCategories);
-      console.log("Données récupérées depuis le localStorage", dataGallery, dataCategories);
-    } else {
-      // Sinon, on effectue les appels API
-      const responseWorks = await fetch(urlWorks);
-      if (!responseWorks.ok) {
-        throw new Error("Erreur réseau : " + responseWorks.status);
-      }
-      const responseCategories = await fetch(urlCategories);
-      if (!responseCategories.ok) {
-        throw new Error("Erreur réseau : " + responseCategories.status);
-      }
-
-      dataGallery = await responseWorks.json();
-      dataCategories = await responseCategories.json();
-
-      // Enregistrer les données dans le localStorage pour une utilisation future
-      localStorage.setItem("dataGallery", JSON.stringify(dataGallery));
-      localStorage.setItem("dataCategories", JSON.stringify(dataCategories));
-      //console.log("Données sauvegardées dans le localStorage");
+    const responseWorks = await fetch(urlWorks);
+    if (!responseWorks.ok) {
+      throw new Error("Erreur réseau : " + responseWorks.status);
     }
+
+    dataGallery = await responseWorks.json();
+    //localStorage.setItem('dataGallery', dataGallery);
+    
+    const responseCategories = await fetch(urlCategories);
+    if (!responseCategories.ok) {
+      throw new Error("Erreur réseau : " + responseCategories.status);
+    }
+
+    dataCategories = await responseCategories.json();
+    //localStorage.setItem('dataCategories', dataCategories);
 
     // Génération du bouton "tous"
     genereButton("Tous");

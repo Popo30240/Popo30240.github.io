@@ -299,9 +299,31 @@ li:hover {
     left: 15px;
 	font-size: 24px;
 }
+#modeEdition #add-photo-modal h2{
+	text-align: center ;
+}
+#modeEdition #contenairPhoto {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 420px;
+    height: 169px;
+    background-color: #E8F1F6;
+    border-radius: 5px;
+}
+#modeEdition #add-photo-modal img {
+	width: 129px;
+	height: 169px;
+	object-fit: cover;
+	position: relative;
+}
 #modeEdition #validate-btn {
 	color: white;
 	background-color: #A7A7A7;
+}
+#modeEdition #validate-btn.active {
+	background-color: #1D6154;
 }
 .image-container {
 	position: relative;
@@ -322,10 +344,6 @@ button {
 	background-color: white;
 }
 .buttons button:hover {
-	color: white;
-	background-color: #1D6154;
-}
-#login button {
 	color: white;
 	background-color: #1D6154;
 }
@@ -364,12 +382,19 @@ button {
 #contact label {
 	margin: 2em 0 1em 0;
 }
-#login label {
+#add-photo-content {
+	display: flex;
+    flex-direction: column;
+}
+#login label,
+#add-photo-modal label {
 	padding-top: 10%;
 	font-weight: bold;
+	padding-bottom: 10px;
 }
 #contact input,
-#login input {
+#login input,
+#add-photo-modal input {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;

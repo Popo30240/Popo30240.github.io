@@ -12,12 +12,17 @@ async function posterGalleryData(url) {
             }
 
             // On convertit le résultat en JSON
-            const gallery = await resultat.json();
-            console.log("Données de la galerie", gallery);
+            dataGallery = await resultat.json();
+            console.log("Données de la galerie", dataGallery);
+
+            const ClassGallery = document.querySelector(".gallery");
+            
+            // Clean la galerie avant de recharger
+            ClassGallery.innerHTML = '';
 
             // On génère toute la galerie
-            for (let i = 0; i < gallery.length; i++) {
-                genereGallery(gallery[i]);
+            for (let i = 0; i < dataGallery.length; i++) {
+                genereGallery(dataGallery[i]);
             }
 
         } catch (error) {

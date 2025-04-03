@@ -5,8 +5,16 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
   const password = document.getElementById('password').value;
   const messageDiv = document.getElementById('message');
 
+  // Étape 1 : Vérification des champs
+  if (email === "" && password === "") {
+    // Si les champs sont vides, on affiche un message d'erreur et on arrête l'exécution de la fonction
+    messageDiv.style.color = 'red';
+    messageDiv.innerText = "Veuillez remplir tous les champs.";
+    return;
+  }
+    
   try {
-    // Étape 1 : Authentification auprès du serveur en envoyant l'email et le mot de passe
+    // Étape 2 : Authentification auprès du serveur en envoyant l'email et le mot de passe
     const responseAuthentication = await fetch(urlLogin, { 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
