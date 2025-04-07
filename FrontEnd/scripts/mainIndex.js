@@ -1,23 +1,12 @@
+if (tokenLocalStorage)  {
+  localStorage.removeItem("authToken");
+}
 
 async function lunchGallery() {
 
-  try {
+    const dataGallery = await fetchReturnData(urlWorks);
     
-    const responseWorks = await fetch(urlWorks);
-    if (!responseWorks.ok) {
-      throw new Error("Erreur réseau : " + responseWorks.status);
-    }
-
-    dataGallery = await responseWorks.json();
-    //localStorage.setItem('dataGallery', dataGallery);
-    
-    const responseCategories = await fetch(urlCategories);
-    if (!responseCategories.ok) {
-      throw new Error("Erreur réseau : " + responseCategories.status);
-    }
-
-    dataCategories = await responseCategories.json();
-    //localStorage.setItem('dataCategories', dataCategories);
+    const dataCategories = await fetchReturnData(urlCategories);
 
     // Génération du bouton "tous"
     genereButton("Tous");
@@ -58,9 +47,6 @@ async function lunchGallery() {
         }
       });
     }
-  } catch (error) {
-    console.error("Erreur lors de la récupération des données :", error);
-  }
 }
 
 lunchGallery();
