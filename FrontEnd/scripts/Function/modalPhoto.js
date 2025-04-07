@@ -153,8 +153,9 @@ validateBtn.addEventListener('click', () => {
 // Fonction asynchrone pour charger et afficher la galerie d'édition
 async function modalEdition() {
     
-    // Remplacer 'urlWorks' par l'URL de votre API
+    // On récupère les données de l'API pour la galerie pour la mettre dans la variable dataGallery
     const dataGallery = await fetchReturnData(urlWorks);
+    // On vérifie si dataGallery contient des données avant de les passer à la fonction posterGallery
     if (dataGallery) {
         // On passe le résultat (data) en argument à posterGallery
         posterGallery(dataGallery);
@@ -162,7 +163,6 @@ async function modalEdition() {
         console.error("Aucune donnée récupérée venant de " + urlWorks);
     }
 
-    // Remplacer 'urlCategories' par l'URL de votre API
     const dataCategories = await fetchReturnData(urlCategories);
     if (dataCategories) {         
         // Vider le select avant de le remplir
@@ -175,6 +175,7 @@ async function modalEdition() {
             option.textContent = category.name;
             categorySelect.appendChild(option);
         });
+
     } else {
         console.error("Aucune catégorie récupérée venant de " + urlCategories);
     }
@@ -182,6 +183,7 @@ async function modalEdition() {
     // Nettoyer la galerie avant de la recharger
     galleryEdition.innerHTML = '';
 
+    // On génère la galerie d'édition avec les images récupérées
     dataGallery.forEach(img => {
         const div = document.createElement('div');
         div.classList.add('image-container');
@@ -222,4 +224,4 @@ async function modalEdition() {
         galleryEdition.appendChild(div);
     });
   
-} // Fin de la fonction modalPhoto
+}

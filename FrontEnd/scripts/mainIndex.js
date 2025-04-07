@@ -1,4 +1,4 @@
-if (tokenLocalStorage)  {
+if (tokenLocalStorage) {
   localStorage.removeItem("authToken");
 }
 

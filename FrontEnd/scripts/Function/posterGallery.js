@@ -1,4 +1,9 @@
-// Fonction pour afficher la galerie avec les données fournies
+/**
+ * 
+ * @param {array} dataArray : tableau d'objets contenant les données de la galerie
+ * @returns {void} : aucune valeur de retour
+ */
+// Fonction pour afficher la galerie avec les données fournies de l'API
 function posterGallery(dataArray) {
     const ClassGallery = document.querySelector(".gallery");
     
