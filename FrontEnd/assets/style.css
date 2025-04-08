@@ -80,19 +80,12 @@ header {
 	display: flex;
 	justify-content: space-between;
 	margin: 3% 150px 0 150px;
-	/* position: relative; */
 }
 main {
 	width: 68%;
-	/* max-width: 940px; */
-	/* position: absolute;
-	z-index: -1;
-    top: -45px;
-    left: 15.3%; */
 	margin: auto;
 	padding-bottom: 100px;
-	/* border-left: 2px solid rgb(247 204 191);
-	border-right: 2px solid rgb(247 204 191); */
+
 }
 .bodyLogin main{
 	padding-bottom: 1000px;
@@ -100,8 +93,6 @@ main {
 section {
 	padding-top: 15%;
 	margin-bottom: 15%;
-	/* padding-top: 30%;
-    margin-bottom: -15%; */
 }
 
 h1{
@@ -201,6 +192,7 @@ li:hover {
 /* Fond de la modale */
 #modeEdition .modal {
 	display: none;
+	margin: 10px;
 	position: fixed;
 	z-index: 1;
 	left: 0;
@@ -277,7 +269,7 @@ li:hover {
     height: 1px;
     width: 74%;
     background-color: #B3B3B3;
-    margin: 5% 0 5% 0;
+    margin: 10% 0 5% 0;
 }
 #modeEdition .modal_button {
 	margin-top: 15px;
@@ -308,6 +300,7 @@ li:hover {
     height: 169px;
     background-color: #E8F1F6;
     border-radius: 5px;
+	margin-bottom: 20px;
 }
 #modeEdition #add-photo-modal img {
 	width: 129px;
@@ -317,6 +310,9 @@ li:hover {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+#modeEdition #add-photo-modal p {
+	font-size: 10px;
 }
 #modeEdition #validate-btn {
 	color: white;
@@ -410,10 +406,12 @@ body #add-photo-modal #photo-input {
 	background-color: #CBD6DC;
 	border-radius: 50px;
 	cursor: pointer;
+	margin: 10px;
 }
 #contact input,
 #login input,
-#add-photo-modal input {
+#add-photo-modal input,
+#add-photo-modal select {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;

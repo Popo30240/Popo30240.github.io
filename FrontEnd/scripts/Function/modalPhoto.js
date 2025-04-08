@@ -27,6 +27,7 @@ closeBtnModalGallery.addEventListener('click', () => {
 });
 closeBtnModalAddPhoto.addEventListener('click', () => {
     modalAddPhoto.style.display = 'none';
+    preview.style.display = 'none'; // Masquer l'aperçu de l'image
 });
 
 // Fermer la modale en cliquant en dehors
@@ -45,6 +46,7 @@ addPhotoBtn.addEventListener('click', () => {
     modalAddPhoto.style.display = 'block';
     addPictureBtn.style.display = 'block'; // Afficher le bouton d'ajout de photo
     formatPhoto.style.display = 'block'; // Afficher le texte d'instructions
+    preview.style.display = 'none'; // Masquer l'aperçu de l'image
 });
 
 backButtonOnModalGallery.addEventListener('click', () => {
@@ -107,7 +109,7 @@ validateBtn.addEventListener('click', () => {
     formData.append('image', file);
     formData.append('title', titleInput.value.trim());
     formData.append('category', categoryInput.value.trim());
-    console.log("FormData :", formData);
+    //console.log("FormData :", formData);
 
     // Envoi de la requête POST (utilisation de FormData pour la gestion des fichiers)
     fetch(urlWorks, {
@@ -121,6 +123,8 @@ validateBtn.addEventListener('click', () => {
     .then(response => {
         if (response.ok) {
             console.log("Image ajoutée avec succès.");
+            // Recharger la galerie d'édition après ajout
+            modalEdition();
             // Réinitialiser le formulaire et fermer la modale d'ajout
             modalAddPhoto.style.display = 'none';
             photoInput.value = '';
